@@ -1,0 +1,60 @@
+# Byte-compiled / Python Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments (CPU serving & GPU training)
+.venv/
+.venv-gpu/
+venv/
+ENV/
+env/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets.json
+
+# Next.js Dependencies & Build Artifacts
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/tsconfig.tsbuildinfo
+
+# IDE, Temporary, Scratch & Log Files
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.old
+*.log
+tmp/
+temp/
+.DS_Store
+Thumbs.db
+
+# Large Raw Packet Captures, Training Splits & MAC Registry (Excluded from GitHub/Render)
+datasets/external/
+*.pcap
+*.pcapng
+
+# Offline P1 Evaluation Pools & Dynamic Runtime Generated Outputs
+datasets/generated/ctgan_device_aware_v2/
+datasets/generated/iot_synthetic_*.csv
+datasets/generated/iot_synthetic_*.parquet
+datasets/generated/iot_synthetic_*_metadata.json
+datasets/generated/*_test*
+reports/evaluations/runs/
+anomaly_detection/models/custom/
+anomaly_detection/results/custom/

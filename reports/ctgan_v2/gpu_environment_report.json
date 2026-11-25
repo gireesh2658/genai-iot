@@ -1,0 +1,51 @@
+{
+  "python_executable": "C:\\Users\\giree\\Desktop\\gen_AI_project\\gen_AI_project\\.venv-gpu\\Scripts\\python.exe",
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "torch_version": "2.14.1+cu130",
+  "torch_cuda_version": "13.0",
+  "cuda_available": true,
+  "device_count": 1,
+  "device_name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "compute_capability": "8.6",
+  "total_vram_mb": 6143.5,
+  "tensor_matmul_test": {
+    "shape": [
+      2048,
+      2048
+    ],
+    "elapsed_ms": 43.542,
+    "cpu_vs_gpu_max_abs_diff": 0.000305,
+    "peak_allocated_mb": 56.12,
+    "passed": true
+  },
+  "raw_ctgan_gpu_smoke": {
+    "epochs": 2,
+    "batch_size": 100,
+    "pac": 10,
+    "enable_gpu": true,
+    "ctgan_device": "cuda",
+    "generator_on_cuda": true,
+    "dim_cond_vec": 6,
+    "transformed_data_dim": 20,
+    "elapsed_s": 3.267,
+    "sampled_rows": 50,
+    "peak_allocated_mb": 22.78,
+    "passed": true
+  },
+  "sdv_ctgan_gpu_smoke": {
+    "epochs": 2,
+    "enable_gpu": true,
+    "ctgan_device": "cuda",
+    "generator_on_cuda": true,
+    "dim_cond_vec": 6,
+    "transformed_data_dim": 20,
+    "elapsed_s": 0.47,
+    "sampled_rows": 50,
+    "cond_sampled_rows": 20,
+    "cond_exact_match_rate": 1.0,
+    "peak_allocated_mb": 22.78,
+    "cpu_fallback_after_set_device_passed": true,
+    "passed": true
+  },
+  "overall_gpu_verified": true
+}

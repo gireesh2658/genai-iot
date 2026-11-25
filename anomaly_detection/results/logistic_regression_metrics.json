@@ -1,0 +1,152 @@
+{
+  "model_name": "logistic_regression",
+  "experiment_type": "TRTR",
+  "target_column": "label_category",
+  "train_records": 38466,
+  "val_records": 9616,
+  "features_count": 38,
+  "fit_duration_seconds": 11.026827400000002,
+  "inference_duration_seconds": 0.006188999999949374,
+  "overall_metrics": {
+    "accuracy": 0.6858,
+    "balanced_accuracy": 0.6133,
+    "macro_precision": 0.5482,
+    "macro_recall": 0.6133,
+    "macro_f1": 0.5214,
+    "weighted_precision": 0.8441,
+    "weighted_recall": 0.6858,
+    "weighted_f1": 0.7177,
+    "roc_auc_macro": 0.9299,
+    "roc_auc_status": "computed_ovr_macro"
+  },
+  "per_class_metrics": {
+    "Benign": {
+      "precision": 0.7988,
+      "recall": 0.5769,
+      "f1_score": 0.67,
+      "support": 234
+    },
+    "Brute Force": {
+      "precision": 0.0294,
+      "recall": 0.3333,
+      "f1_score": 0.0541,
+      "support": 3
+    },
+    "DDoS": {
+      "precision": 0.9613,
+      "recall": 0.6169,
+      "f1_score": 0.7516,
+      "support": 6850
+    },
+    "DoS": {
+      "precision": 0.3693,
+      "recall": 0.9001,
+      "f1_score": 0.5238,
+      "support": 1702
+    },
+    "Mirai": {
+      "precision": 0.9808,
+      "recall": 0.9929,
+      "f1_score": 0.9868,
+      "support": 565
+    },
+    "Reconnaissance": {
+      "precision": 0.7248,
+      "recall": 0.513,
+      "f1_score": 0.6008,
+      "support": 154
+    },
+    "Spoofing": {
+      "precision": 0.4917,
+      "recall": 0.5728,
+      "f1_score": 0.5291,
+      "support": 103
+    },
+    "Web-based": {
+      "precision": 0.0294,
+      "recall": 0.4,
+      "f1_score": 0.0548,
+      "support": 5
+    }
+  },
+  "model_metadata": {
+    "model_name": "logistic_regression",
+    "classifier_class": "LogisticRegression",
+    "pipeline_steps": [
+      "scaler",
+      "classifier"
+    ],
+    "has_feature_scaling": true,
+    "scaler_class": "StandardScaler",
+    "hyperparameters": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 1000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "input_features": [
+      "Protocol Type",
+      "Header_Length",
+      "Time_To_Live",
+      "Rate",
+      "IAT",
+      "Number",
+      "Min",
+      "Max",
+      "AVG",
+      "Std",
+      "Variance",
+      "Tot sum",
+      "fin_flag_number",
+      "syn_flag_number",
+      "rst_flag_number",
+      "psh_flag_number",
+      "ack_flag_number",
+      "ece_flag_number",
+      "cwr_flag_number",
+      "syn_count",
+      "ack_count",
+      "fin_count",
+      "rst_count",
+      "HTTP",
+      "HTTPS",
+      "DNS",
+      "Telnet",
+      "SMTP",
+      "SSH",
+      "IRC",
+      "TCP",
+      "UDP",
+      "DHCP",
+      "ARP",
+      "ICMP",
+      "IGMP",
+      "IPv",
+      "LLC"
+    ],
+    "total_features": 38,
+    "target_categories": [
+      "Benign",
+      "Brute Force",
+      "DDoS",
+      "DoS",
+      "Mirai",
+      "Reconnaissance",
+      "Spoofing",
+      "Web-based"
+    ],
+    "random_state": 42
+  },
+  "saved_model_path": "anomaly_detection/models/logistic_regression_trtr.joblib",
+  "model_file_sha256": "055673f3575cee61e492fc600fc555cfdd9d6d8881bf2606b725d0291f0fe90d"
+}

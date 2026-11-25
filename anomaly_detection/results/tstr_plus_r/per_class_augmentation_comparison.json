@@ -1,0 +1,98 @@
+[
+  {
+    "Category":"Benign",
+    "Support":234,
+    "TRTR F1":0.8452,
+    "TSTR F1":0.7345,
+    "TSTR+R (25%) F1":0.8548,
+    "TSTR+R (50%) F1":0.8436,
+    "TSTR+R (100%) F1":0.8512,
+    "Best Paradigm":"TSTR+R 25%",
+    "Best F1":0.8548,
+    "Delta vs TRTR":0.0096
+  },
+  {
+    "Category":"Brute Force",
+    "Support":3,
+    "TRTR F1":0.3333,
+    "TSTR F1":0.0,
+    "TSTR+R (25%) F1":0.5,
+    "TSTR+R (50%) F1":0.5,
+    "TSTR+R (100%) F1":0.5,
+    "Best Paradigm":"TSTR+R 25%",
+    "Best F1":0.5,
+    "Delta vs TRTR":0.1667
+  },
+  {
+    "Category":"DDoS",
+    "Support":6850,
+    "TRTR F1":0.7992,
+    "TSTR F1":0.8337,
+    "TSTR+R (25%) F1":0.7958,
+    "TSTR+R (50%) F1":0.7944,
+    "TSTR+R (100%) F1":0.7956,
+    "Best Paradigm":"TSTR",
+    "Best F1":0.8337,
+    "Delta vs TRTR":0.0345
+  },
+  {
+    "Category":"DoS",
+    "Support":1702,
+    "TRTR F1":0.565,
+    "TSTR F1":0.4326,
+    "TSTR+R (25%) F1":0.5635,
+    "TSTR+R (50%) F1":0.5636,
+    "TSTR+R (100%) F1":0.5633,
+    "Best Paradigm":"TRTR",
+    "Best F1":0.565,
+    "Delta vs TRTR":0.0
+  },
+  {
+    "Category":"Mirai",
+    "Support":565,
+    "TRTR F1":0.9929,
+    "TSTR F1":0.933,
+    "TSTR+R (25%) F1":0.9938,
+    "TSTR+R (50%) F1":0.9929,
+    "TSTR+R (100%) F1":0.9965,
+    "Best Paradigm":"TSTR+R 100%",
+    "Best F1":0.9965,
+    "Delta vs TRTR":0.0036
+  },
+  {
+    "Category":"Reconnaissance",
+    "Support":154,
+    "TRTR F1":0.7524,
+    "TSTR F1":0.6316,
+    "TSTR+R (25%) F1":0.7647,
+    "TSTR+R (50%) F1":0.7434,
+    "TSTR+R (100%) F1":0.7591,
+    "Best Paradigm":"TSTR+R 25%",
+    "Best F1":0.7647,
+    "Delta vs TRTR":0.0123
+  },
+  {
+    "Category":"Spoofing",
+    "Support":103,
+    "TRTR F1":0.8878,
+    "TSTR F1":0.0,
+    "TSTR+R (25%) F1":0.88,
+    "TSTR+R (50%) F1":0.8528,
+    "TSTR+R (100%) F1":0.88,
+    "Best Paradigm":"TRTR",
+    "Best F1":0.8878,
+    "Delta vs TRTR":0.0
+  },
+  {
+    "Category":"Web-based",
+    "Support":5,
+    "TRTR F1":0.0,
+    "TSTR F1":0.0,
+    "TSTR+R (25%) F1":0.0,
+    "TSTR+R (50%) F1":0.0,
+    "TSTR+R (100%) F1":0.0,
+    "Best Paradigm":"TRTR",
+    "Best F1":0.0,
+    "Delta vs TRTR":0.0
+  }
+]

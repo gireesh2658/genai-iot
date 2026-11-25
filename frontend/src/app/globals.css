@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #f6f8f5;
+  --surface: #ffffff;
+  --surface-secondary: #eef3f0;
+  --surface-info: #eaf2fd;
+  --surface-mint: #ddf3ea;
+  --surface-warning: #fef5e7;
+  --surface-danger: #fdecec;
+
+  --primary: #2a67b1;
+  --primary-hover: #215491;
+  --secondary: #17857b;
+  --lavender: #6459ba;
+
+  --success: #1a7d5e;
+  --warning: #a36312;
+  --danger: #bf4840;
+
+  --text-primary: #2b3748;
+  --text-secondary: #556578;
+  --text-muted: #667587;
+
+  --border: #e5eae7;
+  --border-strong: #cfd8d3;
+}
+
+html,
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility focus rings & skip links */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Signal Intelligence Studio structural surfaces */
+.studio-panel {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.875rem;
+  box-shadow: 0 1px 2px rgba(43, 55, 72, 0.04);
+}
+
+.studio-well {
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.studio-input {
+  width: 100%;
+  background-color: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 0.625rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.studio-input::placeholder {
+  color: var(--text-muted);
+}
+
+.studio-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(42, 103, 177, 0.14);
+  outline: none;
+}
+
+.signal-grid-backdrop {
+  background-color: var(--surface);
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Refined daylight scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: #c7d1cc;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9aa8a1;
+}

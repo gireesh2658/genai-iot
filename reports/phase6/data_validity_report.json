@@ -1,0 +1,84 @@
+{
+  "schema_validity": {
+    "total_columns": 42,
+    "expected_columns": 42,
+    "has_correct_count": true,
+    "has_correct_order": true,
+    "missing_columns": [],
+    "unexpected_columns": [],
+    "is_valid": true
+  },
+  "numerical_validity": {
+    "total_rows": 5000,
+    "total_nulls": 0,
+    "total_infs": 0,
+    "negative_violations": {},
+    "fractional_violations": {},
+    "has_nulls": false,
+    "has_infs": false,
+    "has_negative_violations": false
+  },
+  "statistical_invariants": {
+    "min_le_avg_le_max": {
+      "min_gt_avg_count": 2596,
+      "avg_gt_max_count": 929,
+      "total_violations": 3525,
+      "violation_pct": 70.5
+    },
+    "std_sqrt_variance": {
+      "violation_count": 3231,
+      "violation_pct": 64.62,
+      "mean_abs_diff": 149.07798342624903,
+      "max_abs_diff": 2444.847865151218
+    },
+    "avg_tot_sum_ratio": {
+      "violation_count": 2354,
+      "violation_pct": 47.08,
+      "mean_abs_diff": 368.09746011401137,
+      "max_abs_diff": 44654.63948665496
+    }
+  },
+  "protocol_consistency": {
+    "protocol_type_name_mismatch": {
+      "count": 881,
+      "pct": 17.62
+    },
+    "simultaneous_tcp_and_udp": {
+      "count": 80,
+      "pct": 1.6
+    }
+  },
+  "label_consistency": {
+    "total_rows": 5000,
+    "category_mismatches": {
+      "count": 1743,
+      "pct": 34.86,
+      "top_patterns": {
+        "DOS-TCP_FLOOD -> DDoS (expected DoS)": 130,
+        "DOS-SYN_FLOOD -> DDoS (expected DoS)": 116,
+        "DOS-UDP_FLOOD -> DDoS (expected DoS)": 92,
+        "DDOS-SYN_FLOOD -> DoS (expected DDoS)": 90,
+        "DDOS-UDP_FLOOD -> DoS (expected DDoS)": 75,
+        "MIRAI-UDPPLAIN -> DDoS (expected Mirai)": 73,
+        "BENIGN -> Reconnaissance (expected Benign)": 68,
+        "MIRAI-GREETH_FLOOD -> DDoS (expected Mirai)": 42,
+        "MIRAI-UDPPLAIN -> DoS (expected Mirai)": 36,
+        "MIRAI-GREIP_FLOOD -> DDoS (expected Mirai)": 34
+      }
+    },
+    "benign_with_is_attack_1": {
+      "count": 138,
+      "pct_of_benign": 37.0,
+      "pct_of_total": 2.76
+    },
+    "attack_with_is_attack_0": {
+      "count": 90,
+      "pct_of_attacks": 1.95,
+      "pct_of_total": 1.8
+    },
+    "total_is_attack_violations": {
+      "count": 228,
+      "pct": 4.56
+    }
+  }
+}

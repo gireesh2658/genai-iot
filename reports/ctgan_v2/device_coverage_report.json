@@ -1,0 +1,759 @@
+{
+  "dataset_path": "datasets\\external\\device_labelled_iot_data\\ciciot2023_device_labelled_v2.parquet",
+  "provenance_path": "datasets\\external\\device_labelled_iot_data\\ciciot2023_device_labelled_v2_provenance.parquet",
+  "extraction_elapsed_s": 43.17,
+  "total_rows": 125924,
+  "total_columns": 44,
+  "columns": [
+    "Protocol Type",
+    "Header_Length",
+    "Time_To_Live",
+    "Rate",
+    "IAT",
+    "Number",
+    "Min",
+    "Max",
+    "AVG",
+    "Std",
+    "Variance",
+    "Tot sum",
+    "fin_flag_number",
+    "syn_flag_number",
+    "rst_flag_number",
+    "psh_flag_number",
+    "ack_flag_number",
+    "ece_flag_number",
+    "cwr_flag_number",
+    "syn_count",
+    "ack_count",
+    "fin_count",
+    "rst_count",
+    "HTTP",
+    "HTTPS",
+    "DNS",
+    "Telnet",
+    "SMTP",
+    "SSH",
+    "IRC",
+    "TCP",
+    "UDP",
+    "DHCP",
+    "ARP",
+    "ICMP",
+    "IGMP",
+    "IPv",
+    "LLC",
+    "protocol_name",
+    "label_raw",
+    "label_category",
+    "is_attack",
+    "device_id",
+    "device_category"
+  ],
+  "unique_device_ids": 70,
+  "unique_device_categories": [
+    "Audio",
+    "Camera",
+    "Home Automation",
+    "Hub",
+    "Lighting",
+    "NextGen",
+    "Power Outlet"
+  ],
+  "unique_label_raw": 33,
+  "unique_label_categories": [
+    "Benign",
+    "Brute Force",
+    "DDoS",
+    "DoS",
+    "Mirai",
+    "Reconnaissance",
+    "Spoofing",
+    "Web-based"
+  ],
+  "zero_mac_ip_leakage_verified": true,
+  "domain_validation_on_real_extracted_data": {
+    "schema_validity": {
+      "total_columns": 44,
+      "expected_columns": 44,
+      "has_correct_count": true,
+      "has_correct_order": true,
+      "missing_columns": [],
+      "unexpected_columns": [],
+      "is_valid": true
+    },
+    "numerical_validity": {
+      "total_rows": 125924,
+      "total_nulls": 0,
+      "total_infs": 0,
+      "negative_violations": {},
+      "fractional_violations": {},
+      "has_nulls": false,
+      "has_infs": false,
+      "has_negative_violations": false
+    },
+    "statistical_invariants": {
+      "min_le_avg_le_max": {
+        "min_gt_avg_count": 0,
+        "avg_gt_max_count": 0,
+        "total_violations": 0,
+        "violation_pct": 0.0
+      },
+      "std_sqrt_variance": {
+        "violation_count": 0,
+        "violation_pct": 0.0,
+        "mean_abs_diff": 1.46759200703417e-07,
+        "max_abs_diff": 5.029070777595734e-07
+      },
+      "avg_tot_sum_ratio": {
+        "violation_count": 0,
+        "violation_pct": 0.0,
+        "mean_abs_diff": 1.779798313224929e-09,
+        "max_abs_diff": 4.93506490784057e-07
+      }
+    },
+    "protocol_consistency": {
+      "protocol_type_name_mismatch": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "simultaneous_tcp_and_udp": {
+        "count": 0,
+        "pct": 0.0
+      }
+    },
+    "label_consistency": {
+      "total_rows": 125924,
+      "category_mismatches": {
+        "count": 0,
+        "pct": 0.0,
+        "top_patterns": {}
+      },
+      "benign_with_is_attack_1": {
+        "count": 0,
+        "pct_of_benign": 0.0,
+        "pct_of_total": 0.0
+      },
+      "attack_with_is_attack_0": {
+        "count": 0,
+        "pct_of_attacks": 0.0,
+        "pct_of_total": 0.0
+      },
+      "total_is_attack_violations": {
+        "count": 0,
+        "pct": 0.0
+      }
+    }
+  },
+  "device_category_counts": {
+    "Camera": 39660,
+    "Audio": 29715,
+    "Hub": 16562,
+    "Power Outlet": 15009,
+    "NextGen": 10254,
+    "Home Automation": 8398,
+    "Lighting": 6326
+  },
+  "label_category_counts": {
+    "Benign": 26251,
+    "Reconnaissance": 25185,
+    "Web-based": 22549,
+    "DDoS": 21530,
+    "DoS": 12315,
+    "Spoofing": 7993,
+    "Brute Force": 5444,
+    "Mirai": 4657
+  },
+  "label_raw_counts": {
+    "BENIGN": 26251,
+    "VULNERABILITYSCAN": 7304,
+    "RECON-HOSTDISCOVERY": 6967,
+    "DNS_SPOOFING": 6763,
+    "BROWSERHIJACKING": 5778,
+    "DICTIONARYBRUTEFORCE": 5444,
+    "SQLINJECTION": 5169,
+    "COMMANDINJECTION": 4983,
+    "DOS-HTTP_FLOOD": 4918,
+    "RECON-PORTSCAN": 4575,
+    "RECON-OSSCAN": 4233,
+    "DDOS-SYN_FLOOD": 3552,
+    "XSS": 3496,
+    "BACKDOOR_MALWARE": 3123,
+    "DDOS-SLOWLORIS": 2766,
+    "DOS-TCP_FLOOD": 2656,
+    "DDOS-HTTP_FLOOD": 2651,
+    "DOS-SYN_FLOOD": 2643,
+    "DDOS-ICMP_FLOOD": 2404,
+    "DDOS-UDP_FLOOD": 2210,
+    "DDOS-TCP_FLOOD": 2205,
+    "RECON-PINGSWEEP": 2106,
+    "DOS-UDP_FLOOD": 2098,
+    "MIRAI-GREIP_FLOOD": 1572,
+    "MIRAI-GREETH_FLOOD": 1544,
+    "MIRAI-UDPPLAIN": 1541,
+    "MITM-ARPSPOOFING": 1230,
+    "DDOS-PSHACK_FLOOD": 1111,
+    "DDOS-SYNONYMOUSIP_FLOOD": 1107,
+    "DDOS-RSTFINFLOOD": 1093,
+    "DDOS-ICMP_FRAGMENTATION": 850,
+    "DDOS-ACK_FRAGMENTATION": 795,
+    "DDOS-UDP_FRAGMENTATION": 786
+  },
+  "rare_raw_classes_under_100": {},
+  "testbed_role_counts": {
+    "victim": 125186,
+    "attacker": 738
+  },
+  "device_category_by_label_category": {
+    "Benign": {
+      "Audio": 4651,
+      "Camera": 8176,
+      "Home Automation": 2587,
+      "Hub": 3927,
+      "Lighting": 2119,
+      "NextGen": 74,
+      "Power Outlet": 4717
+    },
+    "Brute Force": {
+      "Audio": 954,
+      "Camera": 2062,
+      "Home Automation": 356,
+      "Hub": 632,
+      "Lighting": 560,
+      "NextGen": 224,
+      "Power Outlet": 656
+    },
+    "DDoS": {
+      "Audio": 9139,
+      "Camera": 7337,
+      "Home Automation": 1435,
+      "Hub": 2023,
+      "Lighting": 82,
+      "NextGen": 40,
+      "Power Outlet": 1474
+    },
+    "DoS": {
+      "Audio": 3441,
+      "Camera": 2728,
+      "Home Automation": 42,
+      "Hub": 1414,
+      "Lighting": 35,
+      "NextGen": 4590,
+      "Power Outlet": 65
+    },
+    "Mirai": {
+      "Audio": 1465,
+      "Camera": 2337,
+      "Home Automation": 14,
+      "Hub": 764,
+      "Lighting": 22,
+      "NextGen": 20,
+      "Power Outlet": 35
+    },
+    "Reconnaissance": {
+      "Audio": 4117,
+      "Camera": 7280,
+      "Home Automation": 2518,
+      "Hub": 3037,
+      "Lighting": 2186,
+      "NextGen": 1213,
+      "Power Outlet": 4834
+    },
+    "Spoofing": {
+      "Audio": 1600,
+      "Camera": 2507,
+      "Home Automation": 770,
+      "Hub": 803,
+      "Lighting": 668,
+      "NextGen": 260,
+      "Power Outlet": 1385
+    },
+    "Web-based": {
+      "Audio": 4348,
+      "Camera": 7233,
+      "Home Automation": 676,
+      "Hub": 3962,
+      "Lighting": 654,
+      "NextGen": 3833,
+      "Power Outlet": 1843
+    }
+  },
+  "testbed_role_by_label_category": {
+    "Benign": {
+      "attacker": 50,
+      "victim": 26201
+    },
+    "Brute Force": {
+      "attacker": 8,
+      "victim": 5436
+    },
+    "DDoS": {
+      "attacker": 33,
+      "victim": 21497
+    },
+    "DoS": {
+      "attacker": 1,
+      "victim": 12314
+    },
+    "Mirai": {
+      "attacker": 18,
+      "victim": 4639
+    },
+    "Reconnaissance": {
+      "attacker": 448,
+      "victim": 24737
+    },
+    "Spoofing": {
+      "attacker": 151,
+      "victim": 7842
+    },
+    "Web-based": {
+      "attacker": 29,
+      "victim": 22520
+    }
+  },
+  "supported_device_x_macro_pairs": 56,
+  "total_possible_device_x_macro_pairs": 56,
+  "low_support_device_x_macro_pairs_under_20": [
+    {
+      "device_category": "Home Automation",
+      "label_category": "Mirai",
+      "count": 14
+    }
+  ],
+  "zero_support_device_x_macro_pairs": [],
+  "per_capture_diagnostics": [
+    {
+      "capture_id": "benign_0",
+      "label_raw": "BENIGN",
+      "label_category": "Benign",
+      "total_epbs": 295615,
+      "matched_official_device_epbs": 279639,
+      "active_devices": 63,
+      "extracted_windows": 8024
+    },
+    {
+      "capture_id": "benign_1",
+      "label_raw": "BENIGN",
+      "label_category": "Benign",
+      "total_epbs": 281187,
+      "matched_official_device_epbs": 272723,
+      "active_devices": 65,
+      "extracted_windows": 6031
+    },
+    {
+      "capture_id": "benign_2",
+      "label_raw": "BENIGN",
+      "label_category": "Benign",
+      "total_epbs": 281716,
+      "matched_official_device_epbs": 273013,
+      "active_devices": 64,
+      "extracted_windows": 6084
+    },
+    {
+      "capture_id": "benign_3",
+      "label_raw": "BENIGN",
+      "label_category": "Benign",
+      "total_epbs": 281640,
+      "matched_official_device_epbs": 276381,
+      "active_devices": 64,
+      "extracted_windows": 6112
+    },
+    {
+      "capture_id": "web_backdoor",
+      "label_raw": "BACKDOOR_MALWARE",
+      "label_category": "Web-based",
+      "total_epbs": 33414,
+      "matched_official_device_epbs": 31185,
+      "active_devices": 54,
+      "extracted_windows": 3123
+    },
+    {
+      "capture_id": "web_xss",
+      "label_raw": "XSS",
+      "label_category": "Web-based",
+      "total_epbs": 40183,
+      "matched_official_device_epbs": 34902,
+      "active_devices": 54,
+      "extracted_windows": 3496
+    },
+    {
+      "capture_id": "web_sqli",
+      "label_raw": "SQLINJECTION",
+      "label_category": "Web-based",
+      "total_epbs": 53462,
+      "matched_official_device_epbs": 51620,
+      "active_devices": 64,
+      "extracted_windows": 5169
+    },
+    {
+      "capture_id": "web_cmdinj",
+      "label_raw": "COMMANDINJECTION",
+      "label_category": "Web-based",
+      "total_epbs": 55741,
+      "matched_official_device_epbs": 49782,
+      "active_devices": 56,
+      "extracted_windows": 4983
+    },
+    {
+      "capture_id": "web_hijack",
+      "label_raw": "BROWSERHIJACKING",
+      "label_category": "Web-based",
+      "total_epbs": 59821,
+      "matched_official_device_epbs": 57775,
+      "active_devices": 61,
+      "extracted_windows": 5778
+    },
+    {
+      "capture_id": "bf_dict",
+      "label_raw": "DICTIONARYBRUTEFORCE",
+      "label_category": "Brute Force",
+      "total_epbs": 133138,
+      "matched_official_device_epbs": 121197,
+      "active_devices": 64,
+      "extracted_windows": 5444
+    },
+    {
+      "capture_id": "recon_ping",
+      "label_raw": "RECON-PINGSWEEP",
+      "label_category": "Reconnaissance",
+      "total_epbs": 22943,
+      "matched_official_device_epbs": 21002,
+      "active_devices": 64,
+      "extracted_windows": 2106
+    },
+    {
+      "capture_id": "recon_port",
+      "label_raw": "RECON-PORTSCAN",
+      "label_category": "Reconnaissance",
+      "total_epbs": 223308,
+      "matched_official_device_epbs": 213808,
+      "active_devices": 61,
+      "extracted_windows": 4575
+    },
+    {
+      "capture_id": "recon_os",
+      "label_raw": "RECON-OSSCAN",
+      "label_category": "Reconnaissance",
+      "total_epbs": 203151,
+      "matched_official_device_epbs": 196475,
+      "active_devices": 63,
+      "extracted_windows": 4233
+    },
+    {
+      "capture_id": "recon_host",
+      "label_raw": "RECON-HOSTDISCOVERY",
+      "label_category": "Reconnaissance",
+      "total_epbs": 237304,
+      "matched_official_device_epbs": 233395,
+      "active_devices": 64,
+      "extracted_windows": 6967
+    },
+    {
+      "capture_id": "recon_vuln",
+      "label_raw": "VULNERABILITYSCAN",
+      "label_category": "Reconnaissance",
+      "total_epbs": 230280,
+      "matched_official_device_epbs": 226169,
+      "active_devices": 66,
+      "extracted_windows": 7304
+    },
+    {
+      "capture_id": "spoof_dns",
+      "label_raw": "DNS_SPOOFING",
+      "label_category": "Spoofing",
+      "total_epbs": 258096,
+      "matched_official_device_epbs": 197284,
+      "active_devices": 65,
+      "extracted_windows": 6763
+    },
+    {
+      "capture_id": "spoof_arp",
+      "label_raw": "MITM-ARPSPOOFING",
+      "label_category": "Spoofing",
+      "total_epbs": 240711,
+      "matched_official_device_epbs": 238555,
+      "active_devices": 57,
+      "extracted_windows": 1230
+    },
+    {
+      "capture_id": "dos_syn_audio",
+      "label_raw": "DOS-SYN_FLOOD",
+      "label_category": "DoS",
+      "total_epbs": 130106,
+      "matched_official_device_epbs": 130022,
+      "active_devices": 50,
+      "extracted_windows": 1328
+    },
+    {
+      "capture_id": "dos_syn_cam",
+      "label_raw": "DOS-SYN_FLOOD",
+      "label_category": "DoS",
+      "total_epbs": 130183,
+      "matched_official_device_epbs": 129972,
+      "active_devices": 43,
+      "extracted_windows": 1315
+    },
+    {
+      "capture_id": "dos_tcp_hub",
+      "label_raw": "DOS-TCP_FLOOD",
+      "label_category": "DoS",
+      "total_epbs": 130212,
+      "matched_official_device_epbs": 130161,
+      "active_devices": 49,
+      "extracted_windows": 1330
+    },
+    {
+      "capture_id": "dos_tcp_audio",
+      "label_raw": "DOS-TCP_FLOOD",
+      "label_category": "DoS",
+      "total_epbs": 129247,
+      "matched_official_device_epbs": 129117,
+      "active_devices": 59,
+      "extracted_windows": 1326
+    },
+    {
+      "capture_id": "dos_udp_cam",
+      "label_raw": "DOS-UDP_FLOOD",
+      "label_category": "DoS",
+      "total_epbs": 129744,
+      "matched_official_device_epbs": 129482,
+      "active_devices": 55,
+      "extracted_windows": 1330
+    },
+    {
+      "capture_id": "dos_udp_audio",
+      "label_raw": "DOS-UDP_FLOOD",
+      "label_category": "DoS",
+      "total_epbs": 75123,
+      "matched_official_device_epbs": 75116,
+      "active_devices": 51,
+      "extracted_windows": 768
+    },
+    {
+      "capture_id": "dos_http_0",
+      "label_raw": "DOS-HTTP_FLOOD",
+      "label_category": "DoS",
+      "total_epbs": 121833,
+      "matched_official_device_epbs": 121666,
+      "active_devices": 60,
+      "extracted_windows": 2461
+    },
+    {
+      "capture_id": "dos_http_1",
+      "label_raw": "DOS-HTTP_FLOOD",
+      "label_category": "DoS",
+      "total_epbs": 122241,
+      "matched_official_device_epbs": 121686,
+      "active_devices": 59,
+      "extracted_windows": 2457
+    },
+    {
+      "capture_id": "mirai_greeth_0",
+      "label_raw": "MIRAI-GREETH_FLOOD",
+      "label_category": "Mirai",
+      "total_epbs": 109065,
+      "matched_official_device_epbs": 74286,
+      "active_devices": 55,
+      "extracted_windows": 779
+    },
+    {
+      "capture_id": "mirai_greeth_4",
+      "label_raw": "MIRAI-GREETH_FLOOD",
+      "label_category": "Mirai",
+      "total_epbs": 75160,
+      "matched_official_device_epbs": 75108,
+      "active_devices": 48,
+      "extracted_windows": 765
+    },
+    {
+      "capture_id": "mirai_greip_21",
+      "label_raw": "MIRAI-GREIP_FLOOD",
+      "label_category": "Mirai",
+      "total_epbs": 75322,
+      "matched_official_device_epbs": 75217,
+      "active_devices": 53,
+      "extracted_windows": 781
+    },
+    {
+      "capture_id": "mirai_greip_0",
+      "label_raw": "MIRAI-GREIP_FLOOD",
+      "label_category": "Mirai",
+      "total_epbs": 75807,
+      "matched_official_device_epbs": 75560,
+      "active_devices": 54,
+      "extracted_windows": 791
+    },
+    {
+      "capture_id": "mirai_udp_24",
+      "label_raw": "MIRAI-UDPPLAIN",
+      "label_category": "Mirai",
+      "total_epbs": 75127,
+      "matched_official_device_epbs": 75059,
+      "active_devices": 43,
+      "extracted_windows": 768
+    },
+    {
+      "capture_id": "mirai_udp_2",
+      "label_raw": "MIRAI-UDPPLAIN",
+      "label_category": "Mirai",
+      "total_epbs": 75186,
+      "matched_official_device_epbs": 75165,
+      "active_devices": 49,
+      "extracted_windows": 773
+    },
+    {
+      "capture_id": "ddos_syn_audio",
+      "label_raw": "DDOS-SYN_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 107264,
+      "matched_official_device_epbs": 107156,
+      "active_devices": 62,
+      "extracted_windows": 1115
+    },
+    {
+      "capture_id": "ddos_syn_cam",
+      "label_raw": "DDOS-SYN_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 108582,
+      "matched_official_device_epbs": 108494,
+      "active_devices": 45,
+      "extracted_windows": 1105
+    },
+    {
+      "capture_id": "ddos_syn_plug",
+      "label_raw": "DDOS-SYN_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 130301,
+      "matched_official_device_epbs": 130282,
+      "active_devices": 51,
+      "extracted_windows": 1332
+    },
+    {
+      "capture_id": "ddos_tcp_0",
+      "label_raw": "DDOS-TCP_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 108559,
+      "matched_official_device_epbs": 108541,
+      "active_devices": 40,
+      "extracted_windows": 1101
+    },
+    {
+      "capture_id": "ddos_tcp_1",
+      "label_raw": "DDOS-TCP_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 108543,
+      "matched_official_device_epbs": 108511,
+      "active_devices": 42,
+      "extracted_windows": 1104
+    },
+    {
+      "capture_id": "ddos_udp_0",
+      "label_raw": "DDOS-UDP_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 107935,
+      "matched_official_device_epbs": 107846,
+      "active_devices": 57,
+      "extracted_windows": 1117
+    },
+    {
+      "capture_id": "ddos_udp_5",
+      "label_raw": "DDOS-UDP_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 108649,
+      "matched_official_device_epbs": 108645,
+      "active_devices": 31,
+      "extracted_windows": 1093
+    },
+    {
+      "capture_id": "ddos_icmp_ha",
+      "label_raw": "DDOS-ICMP_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 130318,
+      "matched_official_device_epbs": 130238,
+      "active_devices": 37,
+      "extracted_windows": 1314
+    },
+    {
+      "capture_id": "ddos_icmp_0",
+      "label_raw": "DDOS-ICMP_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 108153,
+      "matched_official_device_epbs": 107528,
+      "active_devices": 45,
+      "extracted_windows": 1090
+    },
+    {
+      "capture_id": "ddos_pshack_1",
+      "label_raw": "DDOS-PSHACK_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 108642,
+      "matched_official_device_epbs": 108631,
+      "active_devices": 47,
+      "extracted_windows": 1111
+    },
+    {
+      "capture_id": "ddos_rstfin_0",
+      "label_raw": "DDOS-RSTFINFLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 106024,
+      "matched_official_device_epbs": 105498,
+      "active_devices": 57,
+      "extracted_windows": 1093
+    },
+    {
+      "capture_id": "ddos_synip_0",
+      "label_raw": "DDOS-SYNONYMOUSIP_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 107487,
+      "matched_official_device_epbs": 107287,
+      "active_devices": 51,
+      "extracted_windows": 1107
+    },
+    {
+      "capture_id": "ddos_ackfrag_12",
+      "label_raw": "DDOS-ACK_FRAGMENTATION",
+      "label_category": "DDoS",
+      "total_epbs": 75639,
+      "matched_official_device_epbs": 75496,
+      "active_devices": 58,
+      "extracted_windows": 795
+    },
+    {
+      "capture_id": "ddos_icmpfrag_0",
+      "label_raw": "DDOS-ICMP_FRAGMENTATION",
+      "label_category": "DDoS",
+      "total_epbs": 84008,
+      "matched_official_device_epbs": 81162,
+      "active_devices": 66,
+      "extracted_windows": 850
+    },
+    {
+      "capture_id": "ddos_udpfrag_12",
+      "label_raw": "DDOS-UDP_FRAGMENTATION",
+      "label_category": "DDoS",
+      "total_epbs": 76721,
+      "matched_official_device_epbs": 76011,
+      "active_devices": 56,
+      "extracted_windows": 786
+    },
+    {
+      "capture_id": "ddos_slowloris",
+      "label_raw": "DDOS-SLOWLORIS",
+      "label_category": "DDoS",
+      "total_epbs": 141513,
+      "matched_official_device_epbs": 137222,
+      "active_devices": 58,
+      "extracted_windows": 2766
+    },
+    {
+      "capture_id": "ddos_http",
+      "label_raw": "DDOS-HTTP_FLOOD",
+      "label_category": "DDoS",
+      "total_epbs": 131862,
+      "matched_official_device_epbs": 131264,
+      "active_devices": 65,
+      "extracted_windows": 2651
+    }
+  ]
+}

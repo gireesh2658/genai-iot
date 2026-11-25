@@ -1,0 +1,192 @@
+{
+  "model_name": "extra_trees",
+  "experiment_type": "TSTR+R",
+  "target_column": "label_category",
+  "train_records": 43466,
+  "val_records": 9616,
+  "features_count": 38,
+  "fit_duration_seconds": 0.5042141000003539,
+  "inference_duration_seconds": 0.040880900000047404,
+  "overall_metrics": {
+    "accuracy": 0.7017,
+    "balanced_accuracy": 0.6371,
+    "macro_precision": 0.6418,
+    "macro_recall": 0.6371,
+    "macro_f1": 0.6188,
+    "weighted_precision": 0.8476,
+    "weighted_recall": 0.7017,
+    "weighted_f1": 0.7303,
+    "roc_auc_macro": 0.9517,
+    "roc_auc_status": "computed_ovr_macro"
+  },
+  "per_class_metrics": {
+    "Benign": {
+      "precision": 0.7843,
+      "recall": 0.8547,
+      "f1_score": 0.818,
+      "support": 234
+    },
+    "Brute Force": {
+      "precision": 0.5,
+      "recall": 0.3333,
+      "f1_score": 0.4,
+      "support": 3
+    },
+    "DDoS": {
+      "precision": 0.9597,
+      "recall": 0.625,
+      "f1_score": 0.757,
+      "support": 6850
+    },
+    "DoS": {
+      "precision": 0.3723,
+      "recall": 0.8954,
+      "f1_score": 0.526,
+      "support": 1702
+    },
+    "Mirai": {
+      "precision": 0.9982,
+      "recall": 0.9947,
+      "f1_score": 0.9965,
+      "support": 565
+    },
+    "Reconnaissance": {
+      "precision": 0.7333,
+      "recall": 0.7143,
+      "f1_score": 0.7237,
+      "support": 154
+    },
+    "Spoofing": {
+      "precision": 0.7865,
+      "recall": 0.6796,
+      "f1_score": 0.7292,
+      "support": 103
+    },
+    "Web-based": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "support": 5
+    }
+  },
+  "model_metadata": {
+    "model_name": "extra_trees",
+    "classifier_class": "ExtraTreesClassifier",
+    "pipeline_steps": [
+      "classifier"
+    ],
+    "has_feature_scaling": false,
+    "scaler_class": null,
+    "hyperparameters": {
+      "bootstrap": false,
+      "ccp_alpha": 0.0,
+      "class_weight": "balanced",
+      "criterion": "gini",
+      "max_depth": 20,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 5,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "input_features": [
+      "Protocol Type",
+      "Header_Length",
+      "Time_To_Live",
+      "Rate",
+      "IAT",
+      "Number",
+      "Min",
+      "Max",
+      "AVG",
+      "Std",
+      "Variance",
+      "Tot sum",
+      "fin_flag_number",
+      "syn_flag_number",
+      "rst_flag_number",
+      "psh_flag_number",
+      "ack_flag_number",
+      "ece_flag_number",
+      "cwr_flag_number",
+      "syn_count",
+      "ack_count",
+      "fin_count",
+      "rst_count",
+      "HTTP",
+      "HTTPS",
+      "DNS",
+      "Telnet",
+      "SMTP",
+      "SSH",
+      "IRC",
+      "TCP",
+      "UDP",
+      "DHCP",
+      "ARP",
+      "ICMP",
+      "IGMP",
+      "IPv",
+      "LLC"
+    ],
+    "total_features": 38,
+    "target_categories": [
+      "Benign",
+      "Brute Force",
+      "DDoS",
+      "DoS",
+      "Mirai",
+      "Reconnaissance",
+      "Spoofing",
+      "Web-based"
+    ],
+    "random_state": 42
+  },
+  "provenance_info": {
+    "base_real_train_records": 38466,
+    "augmentation_records": 5000,
+    "total_augmented_records": 43466,
+    "augmentation_fraction": 1.0,
+    "synthetic_source_path": "datasets/generated/ctgan_initial_sample_v1_domain_corrected.parquet",
+    "synthetic_source_sha256": "3ca7761b3482aa24f915afc0e45d514835e55f61da99aeb07c2946af3581b44a",
+    "sampling_strategy": "deterministic_permutation_without_replacement",
+    "random_seed": 42
+  },
+  "quality_warnings": [
+    "Min <= AVG <= Max packet length bounds remain unresolved by design in synthetic datasets (3,157 records violate ordering in ctgan_initial_sample_v1_domain_corrected; artificial sorting was rejected to prevent +57% KS degradation).",
+    "AVG \u2248 Tot sum / Number flow aggregation ratios remain unresolved by design (2,354 records violate exact quotient; overwriting values was rejected to prevent distribution distortion).",
+    "Syntactic label consistency does not independently establish authentic physical traffic dynamics (continuous features reflect learned Gaussian mixture clusters rather than verified hardware packet dynamics).",
+    "Protocol and application indicators (HTTP, TCP, UDP, IPv, LLC) represent flow-window packet proportion ratios in [0.0, 1.0], not pure binary flags."
+  ],
+  "train_class_distribution": {
+    "DDoS": 30118,
+    "DoS": 7623,
+    "Mirai": 2838,
+    "Benign": 1288,
+    "Reconnaissance": 971,
+    "Spoofing": 553,
+    "Web-based": 40,
+    "Brute Force": 35
+  },
+  "val_class_distribution": {
+    "DDoS": 6850,
+    "DoS": 1702,
+    "Mirai": 565,
+    "Benign": 234,
+    "Reconnaissance": 154,
+    "Spoofing": 103,
+    "Web-based": 5,
+    "Brute Force": 3
+  },
+  "saved_model_path": "anomaly_detection/models/tstr_plus_r/extra_trees_tstr_r_100.joblib",
+  "model_file_sha256": "d557455e073eb90c4e24d0d5d05503b756ff90dedd70cabc279978eabbf36ba7"
+}

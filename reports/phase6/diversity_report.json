@@ -1,0 +1,52 @@
+{
+  "internal_diversity": {
+    "total_records": 5000,
+    "exact_duplicate_records": 0,
+    "rows_in_duplicate_groups": 0,
+    "unique_records": 5000,
+    "uniqueness_ratio": 1.0,
+    "duplicate_percentage": 0.0
+  },
+  "training_overlap": {
+    "exact_overlap_count": 0,
+    "overlap_percentage": 0.0,
+    "has_exact_training_memorization": false
+  },
+  "nearest_neighbor_distance": {
+    "features_used": [
+      "Header_Length",
+      "Time_To_Live",
+      "Rate",
+      "IAT",
+      "Min",
+      "Max",
+      "AVG",
+      "Std",
+      "Variance",
+      "Tot sum",
+      "fin_flag_number",
+      "syn_flag_number",
+      "rst_flag_number",
+      "psh_flag_number",
+      "ack_flag_number",
+      "ece_flag_number",
+      "cwr_flag_number"
+    ],
+    "min_distance": 0.0191,
+    "p01_distance": 0.0301,
+    "p05_distance": 0.0406,
+    "median_distance": 0.9689,
+    "mean_distance": 1.3309,
+    "max_distance": 8.9213,
+    "p95_distance": 3.6963,
+    "std_distance": 1.2659,
+    "near_zero_distance_count": 0,
+    "near_zero_distance_pct": 0.0
+  },
+  "summary": {
+    "uniqueness_ratio": 1.0,
+    "exact_training_overlaps": 0,
+    "median_nn_distance": 0.9689,
+    "memorization_risk": "Low"
+  }
+}

@@ -1,0 +1,462 @@
+{
+  "device_category_tests": [
+    {
+      "condition": {
+        "device_category": "Audio"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 20801,
+      "requested_rows": 200,
+      "generated_rows": 200,
+      "exact_condition_matches": 200,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Camera"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 27762,
+      "requested_rows": 200,
+      "generated_rows": 200,
+      "exact_condition_matches": 200,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Home Automation"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 5878,
+      "requested_rows": 200,
+      "generated_rows": 200,
+      "exact_condition_matches": 200,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Hub"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 11593,
+      "requested_rows": 200,
+      "generated_rows": 200,
+      "exact_condition_matches": 200,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Lighting"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 4428,
+      "requested_rows": 200,
+      "generated_rows": 200,
+      "exact_condition_matches": 200,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "NextGen"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 7178,
+      "requested_rows": 200,
+      "generated_rows": 200,
+      "exact_condition_matches": 200,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Power Outlet"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 10506,
+      "requested_rows": 200,
+      "generated_rows": 200,
+      "exact_condition_matches": 200,
+      "compliance_rate": 1.0
+    }
+  ],
+  "device_id_tests": [
+    {
+      "condition": {
+        "device_id": "device_010"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 7666,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0,
+      "expected_device_category": "Audio",
+      "device_category_consistency_rate": 0.87
+    },
+    {
+      "condition": {
+        "device_id": "device_030"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 5689,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0,
+      "expected_device_category": "Camera",
+      "device_category_consistency_rate": 0.82
+    },
+    {
+      "condition": {
+        "device_id": "device_035"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 1696,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0,
+      "expected_device_category": "Home Automation",
+      "device_category_consistency_rate": 0.79
+    },
+    {
+      "condition": {
+        "device_id": "device_041"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 2772,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0,
+      "expected_device_category": "Hub",
+      "device_category_consistency_rate": 0.7
+    },
+    {
+      "condition": {
+        "device_id": "device_053"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 763,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0,
+      "expected_device_category": "Lighting",
+      "device_category_consistency_rate": 0.59
+    },
+    {
+      "condition": {
+        "device_id": "device_056"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 2948,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0,
+      "expected_device_category": "NextGen",
+      "device_category_consistency_rate": 0.86
+    },
+    {
+      "condition": {
+        "device_id": "device_065"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 1751,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0,
+      "expected_device_category": "Power Outlet",
+      "device_category_consistency_rate": 0.71
+    }
+  ],
+  "attack_category_tests": [
+    {
+      "condition": {
+        "label_category": "Benign"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 18376,
+      "requested_rows": 300,
+      "generated_rows": 300,
+      "exact_condition_matches": 300,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "label_category": "Brute Force"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 3810,
+      "requested_rows": 300,
+      "generated_rows": 300,
+      "exact_condition_matches": 300,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "label_category": "DDoS"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 15070,
+      "requested_rows": 300,
+      "generated_rows": 300,
+      "exact_condition_matches": 300,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "label_category": "DoS"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 8621,
+      "requested_rows": 300,
+      "generated_rows": 300,
+      "exact_condition_matches": 300,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "label_category": "Mirai"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 3260,
+      "requested_rows": 300,
+      "generated_rows": 300,
+      "exact_condition_matches": 300,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "label_category": "Reconnaissance"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 17630,
+      "requested_rows": 300,
+      "generated_rows": 300,
+      "exact_condition_matches": 300,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "label_category": "Spoofing"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 5595,
+      "requested_rows": 300,
+      "generated_rows": 300,
+      "exact_condition_matches": 300,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "label_category": "Web-based"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 15784,
+      "requested_rows": 300,
+      "generated_rows": 300,
+      "exact_condition_matches": 300,
+      "compliance_rate": 1.0
+    }
+  ],
+  "combined_tests": [
+    {
+      "condition": {
+        "device_category": "Audio",
+        "label_category": "Benign"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 3256,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Audio",
+        "label_category": "Brute Force"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 668,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Audio",
+        "label_category": "DDoS"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 6397,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Audio",
+        "label_category": "DoS"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 2409,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Audio",
+        "label_category": "Mirai"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 1025,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Audio",
+        "label_category": "Reconnaissance"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 2882,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Audio",
+        "label_category": "Spoofing"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 1120,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Audio",
+        "label_category": "Web-based"
+      },
+      "supported": true,
+      "support_tier": "well_supported",
+      "empirical_support": 3044,
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "exact_condition_matches": 100,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Home Automation",
+        "label_category": "Mirai"
+      },
+      "supported": true,
+      "support_tier": "under_supported",
+      "empirical_support": 10,
+      "requested_rows": 50,
+      "generated_rows": 20,
+      "exact_condition_matches": 20,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "Lighting",
+        "label_category": "Mirai"
+      },
+      "supported": true,
+      "support_tier": "under_supported",
+      "empirical_support": 15,
+      "requested_rows": 50,
+      "generated_rows": 9,
+      "exact_condition_matches": 9,
+      "compliance_rate": 1.0
+    },
+    {
+      "condition": {
+        "device_category": "NextGen",
+        "label_category": "Mirai"
+      },
+      "supported": true,
+      "support_tier": "under_supported",
+      "empirical_support": 14,
+      "requested_rows": 50,
+      "generated_rows": 46,
+      "exact_condition_matches": 46,
+      "compliance_rate": 1.0
+    }
+  ],
+  "unsupported_tests": [
+    {
+      "condition": {
+        "device_category": "QuantumRouter",
+        "label_category": "DDoS"
+      },
+      "supported": false,
+      "empirical_support": 0,
+      "support_tier": "unsupported",
+      "reason": "Zero empirical training rows for combination {'device_category': 'QuantumRouter', 'label_category': 'DDoS'}."
+    },
+    {
+      "condition": {
+        "device_id": "device_999",
+        "label_category": "Benign"
+      },
+      "supported": false,
+      "empirical_support": 0,
+      "support_tier": "unsupported",
+      "reason": "Zero empirical training rows for combination {'device_id': 'device_999', 'label_category': 'Benign'}."
+    }
+  ],
+  "summary": {
+    "device_category_mean_compliance": 1.0,
+    "device_id_mean_compliance": 1.0,
+    "device_id_category_consistency_mean": 0.7629,
+    "attack_category_mean_compliance": 1.0,
+    "combined_supported_mean_compliance": 1.0,
+    "unsupported_combinations_properly_rejected": 2,
+    "total_unsupported_tested": 2
+  }
+}

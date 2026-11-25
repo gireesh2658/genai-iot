@@ -1,0 +1,437 @@
+{
+  "distribution_comparison": {
+    "macro_category_comparison": {
+      "Benign": {
+        "train_count": 937,
+        "train_pct": 2.44,
+        "val_count": 234,
+        "val_pct": 2.43,
+        "synth_count": 373,
+        "synth_pct": 7.46,
+        "diff_vs_train_pct": 5.02
+      },
+      "Brute Force": {
+        "train_count": 10,
+        "train_pct": 0.03,
+        "val_count": 3,
+        "val_pct": 0.03,
+        "synth_count": 28,
+        "synth_pct": 0.56,
+        "diff_vs_train_pct": 0.53
+      },
+      "DDoS": {
+        "train_count": 27398,
+        "train_pct": 71.23,
+        "val_count": 6850,
+        "val_pct": 71.24,
+        "synth_count": 2859,
+        "synth_pct": 57.18,
+        "diff_vs_train_pct": -14.05
+      },
+      "DoS": {
+        "train_count": 6807,
+        "train_pct": 17.7,
+        "val_count": 1702,
+        "val_pct": 17.7,
+        "synth_count": 727,
+        "synth_pct": 14.54,
+        "diff_vs_train_pct": -3.16
+      },
+      "Mirai": {
+        "train_count": 2262,
+        "train_pct": 5.88,
+        "val_count": 565,
+        "val_pct": 5.88,
+        "synth_count": 467,
+        "synth_pct": 9.34,
+        "diff_vs_train_pct": 3.46
+      },
+      "Reconnaissance": {
+        "train_count": 619,
+        "train_pct": 1.61,
+        "val_count": 154,
+        "val_pct": 1.6,
+        "synth_count": 405,
+        "synth_pct": 8.1,
+        "diff_vs_train_pct": 6.49
+      },
+      "Spoofing": {
+        "train_count": 414,
+        "train_pct": 1.08,
+        "val_count": 103,
+        "val_pct": 1.07,
+        "synth_count": 109,
+        "synth_pct": 2.18,
+        "diff_vs_train_pct": 1.1
+      },
+      "Web-based": {
+        "train_count": 19,
+        "train_pct": 0.05,
+        "val_count": 5,
+        "val_pct": 0.05,
+        "synth_count": 32,
+        "synth_pct": 0.64,
+        "diff_vs_train_pct": 0.59
+      }
+    },
+    "raw_label_comparison": {
+      "BACKDOOR_MALWARE": {
+        "train_count": 3,
+        "train_pct": 0.008,
+        "val_count": 1,
+        "val_pct": 0.01,
+        "synth_count": 4,
+        "synth_pct": 0.08
+      },
+      "BENIGN": {
+        "train_count": 937,
+        "train_pct": 2.436,
+        "val_count": 234,
+        "val_pct": 2.433,
+        "synth_count": 351,
+        "synth_pct": 7.02
+      },
+      "BROWSERHIJACKING": {
+        "train_count": 4,
+        "train_pct": 0.01,
+        "val_count": 1,
+        "val_pct": 0.01,
+        "synth_count": 0,
+        "synth_pct": 0.0
+      },
+      "COMMANDINJECTION": {
+        "train_count": 5,
+        "train_pct": 0.013,
+        "val_count": 1,
+        "val_pct": 0.01,
+        "synth_count": 10,
+        "synth_pct": 0.2
+      },
+      "DDOS-ACK_FRAGMENTATION": {
+        "train_count": 250,
+        "train_pct": 0.65,
+        "val_count": 62,
+        "val_pct": 0.645,
+        "synth_count": 151,
+        "synth_pct": 3.02
+      },
+      "DDOS-HTTP_FLOOD": {
+        "train_count": 18,
+        "train_pct": 0.047,
+        "val_count": 4,
+        "val_pct": 0.042,
+        "synth_count": 32,
+        "synth_pct": 0.64
+      },
+      "DDOS-ICMP_FLOOD": {
+        "train_count": 5710,
+        "train_pct": 14.844,
+        "val_count": 1427,
+        "val_pct": 14.84,
+        "synth_count": 399,
+        "synth_pct": 7.98
+      },
+      "DDOS-ICMP_FRAGMENTATION": {
+        "train_count": 408,
+        "train_pct": 1.061,
+        "val_count": 102,
+        "val_pct": 1.061,
+        "synth_count": 215,
+        "synth_pct": 4.3
+      },
+      "DDOS-PSHACK_FLOOD": {
+        "train_count": 3298,
+        "train_pct": 8.574,
+        "val_count": 825,
+        "val_pct": 8.579,
+        "synth_count": 423,
+        "synth_pct": 8.46
+      },
+      "DDOS-RSTFINFLOOD": {
+        "train_count": 3259,
+        "train_pct": 8.472,
+        "val_count": 815,
+        "val_pct": 8.475,
+        "synth_count": 335,
+        "synth_pct": 6.7
+      },
+      "DDOS-SLOWLORIS": {
+        "train_count": 18,
+        "train_pct": 0.047,
+        "val_count": 4,
+        "val_pct": 0.042,
+        "synth_count": 55,
+        "synth_pct": 1.1
+      },
+      "DDOS-SYNONYMOUSIP_FLOOD": {
+        "train_count": 2883,
+        "train_pct": 7.495,
+        "val_count": 721,
+        "val_pct": 7.498,
+        "synth_count": 183,
+        "synth_pct": 3.66
+      },
+      "DDOS-SYN_FLOOD": {
+        "train_count": 3294,
+        "train_pct": 8.563,
+        "val_count": 824,
+        "val_pct": 8.569,
+        "synth_count": 319,
+        "synth_pct": 6.38
+      },
+      "DDOS-TCP_FLOOD": {
+        "train_count": 3687,
+        "train_pct": 9.585,
+        "val_count": 922,
+        "val_pct": 9.588,
+        "synth_count": 164,
+        "synth_pct": 3.28
+      },
+      "DDOS-UDP_FLOOD": {
+        "train_count": 4342,
+        "train_pct": 11.288,
+        "val_count": 1086,
+        "val_pct": 11.294,
+        "synth_count": 348,
+        "synth_pct": 6.96
+      },
+      "DDOS-UDP_FRAGMENTATION": {
+        "train_count": 231,
+        "train_pct": 0.601,
+        "val_count": 58,
+        "val_pct": 0.603,
+        "synth_count": 96,
+        "synth_pct": 1.92
+      },
+      "DICTIONARYBRUTEFORCE": {
+        "train_count": 10,
+        "train_pct": 0.026,
+        "val_count": 3,
+        "val_pct": 0.031,
+        "synth_count": 25,
+        "synth_pct": 0.5
+      },
+      "DNS_SPOOFING": {
+        "train_count": 142,
+        "train_pct": 0.369,
+        "val_count": 35,
+        "val_pct": 0.364,
+        "synth_count": 57,
+        "synth_pct": 1.14
+      },
+      "DOS-HTTP_FLOOD": {
+        "train_count": 56,
+        "train_pct": 0.146,
+        "val_count": 14,
+        "val_pct": 0.146,
+        "synth_count": 72,
+        "synth_pct": 1.44
+      },
+      "DOS-SYN_FLOOD": {
+        "train_count": 1771,
+        "train_pct": 4.604,
+        "val_count": 443,
+        "val_pct": 4.607,
+        "synth_count": 275,
+        "synth_pct": 5.5
+      },
+      "DOS-TCP_FLOOD": {
+        "train_count": 2198,
+        "train_pct": 5.714,
+        "val_count": 549,
+        "val_pct": 5.709,
+        "synth_count": 185,
+        "synth_pct": 3.7
+      },
+      "DOS-UDP_FLOOD": {
+        "train_count": 2782,
+        "train_pct": 7.232,
+        "val_count": 696,
+        "val_pct": 7.238,
+        "synth_count": 284,
+        "synth_pct": 5.68
+      },
+      "MIRAI-GREETH_FLOOD": {
+        "train_count": 862,
+        "train_pct": 2.241,
+        "val_count": 215,
+        "val_pct": 2.236,
+        "synth_count": 150,
+        "synth_pct": 3.0
+      },
+      "MIRAI-GREIP_FLOOD": {
+        "train_count": 620,
+        "train_pct": 1.612,
+        "val_count": 155,
+        "val_pct": 1.612,
+        "synth_count": 212,
+        "synth_pct": 4.24
+      },
+      "MIRAI-UDPPLAIN": {
+        "train_count": 780,
+        "train_pct": 2.028,
+        "val_count": 195,
+        "val_pct": 2.028,
+        "synth_count": 214,
+        "synth_pct": 4.28
+      },
+      "MITM-ARPSPOOFING": {
+        "train_count": 272,
+        "train_pct": 0.707,
+        "val_count": 68,
+        "val_pct": 0.707,
+        "synth_count": 82,
+        "synth_pct": 1.64
+      },
+      "RECON-HOSTDISCOVERY": {
+        "train_count": 130,
+        "train_pct": 0.338,
+        "val_count": 33,
+        "val_pct": 0.343,
+        "synth_count": 96,
+        "synth_pct": 1.92
+      },
+      "RECON-OSSCAN": {
+        "train_count": 81,
+        "train_pct": 0.211,
+        "val_count": 20,
+        "val_pct": 0.208,
+        "synth_count": 75,
+        "synth_pct": 1.5
+      },
+      "RECON-PINGSWEEP": {
+        "train_count": 5,
+        "train_pct": 0.013,
+        "val_count": 1,
+        "val_pct": 0.01,
+        "synth_count": 7,
+        "synth_pct": 0.14
+      },
+      "RECON-PORTSCAN": {
+        "train_count": 78,
+        "train_pct": 0.203,
+        "val_count": 19,
+        "val_pct": 0.198,
+        "synth_count": 22,
+        "synth_pct": 0.44
+      },
+      "SQLINJECTION": {
+        "train_count": 3,
+        "train_pct": 0.008,
+        "val_count": 1,
+        "val_pct": 0.01,
+        "synth_count": 4,
+        "synth_pct": 0.08
+      },
+      "VULNERABILITYSCAN": {
+        "train_count": 325,
+        "train_pct": 0.845,
+        "val_count": 81,
+        "val_pct": 0.842,
+        "synth_count": 152,
+        "synth_pct": 3.04
+      },
+      "XSS": {
+        "train_count": 4,
+        "train_pct": 0.01,
+        "val_count": 1,
+        "val_pct": 0.01,
+        "synth_count": 3,
+        "synth_pct": 0.06
+      }
+    },
+    "target_comparison": {
+      "train_is_attack_1": 37529,
+      "train_is_attack_0": 937,
+      "synth_is_attack_1": 4675,
+      "synth_is_attack_0": 325,
+      "train_attack_pct": 97.56,
+      "synth_attack_pct": 93.5
+    },
+    "unique_raw_labels_in_train": 33,
+    "unique_raw_labels_in_synth": 32,
+    "absent_raw_labels_in_synth": [
+      "BROWSERHIJACKING"
+    ],
+    "coverage_pct": 96.97
+  },
+  "conditional_generation_evaluation": [
+    {
+      "scenario": "DDoS",
+      "condition": {
+        "label_category": "DDoS"
+      },
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "matching_rows": 100,
+      "match_percentage": 100.0,
+      "success": true
+    },
+    {
+      "scenario": "DoS",
+      "condition": {
+        "label_category": "DoS"
+      },
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "matching_rows": 100,
+      "match_percentage": 100.0,
+      "success": true
+    },
+    {
+      "scenario": "Mirai",
+      "condition": {
+        "label_category": "Mirai"
+      },
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "matching_rows": 100,
+      "match_percentage": 100.0,
+      "success": true
+    },
+    {
+      "scenario": "Benign",
+      "condition": {
+        "label_category": "Benign"
+      },
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "matching_rows": 100,
+      "match_percentage": 100.0,
+      "success": true
+    },
+    {
+      "scenario": "Reconnaissance",
+      "condition": {
+        "label_category": "Reconnaissance"
+      },
+      "requested_rows": 100,
+      "generated_rows": 100,
+      "matching_rows": 100,
+      "match_percentage": 100.0,
+      "success": true
+    },
+    {
+      "scenario": "DNS_SPOOFING",
+      "condition": {
+        "label_raw": "DNS_SPOOFING"
+      },
+      "requested_rows": 50,
+      "generated_rows": 50,
+      "matching_rows": 50,
+      "match_percentage": 100.0,
+      "success": true
+    },
+    {
+      "scenario": "DICTIONARYBRUTEFORCE",
+      "condition": {
+        "label_raw": "DICTIONARYBRUTEFORCE"
+      },
+      "requested_rows": 50,
+      "generated_rows": 50,
+      "matching_rows": 50,
+      "match_percentage": 100.0,
+      "success": true
+    }
+  ]
+}

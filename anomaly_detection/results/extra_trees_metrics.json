@@ -1,0 +1,156 @@
+{
+  "model_name": "extra_trees",
+  "experiment_type": "TRTR",
+  "target_column": "label_category",
+  "train_records": 38466,
+  "val_records": 9616,
+  "features_count": 38,
+  "fit_duration_seconds": 0.5402469999999084,
+  "inference_duration_seconds": 0.0552552999999989,
+  "overall_metrics": {
+    "accuracy": 0.7284,
+    "balanced_accuracy": 0.6463,
+    "macro_precision": 0.6535,
+    "macro_recall": 0.6463,
+    "macro_f1": 0.634,
+    "weighted_precision": 0.8406,
+    "weighted_recall": 0.7284,
+    "weighted_f1": 0.7539,
+    "roc_auc_macro": 0.9263,
+    "roc_auc_status": "computed_ovr_macro"
+  },
+  "per_class_metrics": {
+    "Benign": {
+      "precision": 0.7899,
+      "recall": 0.8675,
+      "f1_score": 0.8269,
+      "support": 234
+    },
+    "Brute Force": {
+      "precision": 0.5,
+      "recall": 0.3333,
+      "f1_score": 0.4,
+      "support": 3
+    },
+    "DDoS": {
+      "precision": 0.9438,
+      "recall": 0.6747,
+      "f1_score": 0.7869,
+      "support": 6850
+    },
+    "DoS": {
+      "precision": 0.3911,
+      "recall": 0.8402,
+      "f1_score": 0.5338,
+      "support": 1702
+    },
+    "Mirai": {
+      "precision": 0.9947,
+      "recall": 0.9929,
+      "f1_score": 0.9938,
+      "support": 565
+    },
+    "Reconnaissance": {
+      "precision": 0.7432,
+      "recall": 0.7143,
+      "f1_score": 0.7285,
+      "support": 154
+    },
+    "Spoofing": {
+      "precision": 0.8652,
+      "recall": 0.7476,
+      "f1_score": 0.8021,
+      "support": 103
+    },
+    "Web-based": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "support": 5
+    }
+  },
+  "model_metadata": {
+    "model_name": "extra_trees",
+    "classifier_class": "ExtraTreesClassifier",
+    "pipeline_steps": [
+      "classifier"
+    ],
+    "has_feature_scaling": false,
+    "scaler_class": null,
+    "hyperparameters": {
+      "bootstrap": false,
+      "ccp_alpha": 0.0,
+      "class_weight": "balanced",
+      "criterion": "gini",
+      "max_depth": 20,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 5,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "input_features": [
+      "Protocol Type",
+      "Header_Length",
+      "Time_To_Live",
+      "Rate",
+      "IAT",
+      "Number",
+      "Min",
+      "Max",
+      "AVG",
+      "Std",
+      "Variance",
+      "Tot sum",
+      "fin_flag_number",
+      "syn_flag_number",
+      "rst_flag_number",
+      "psh_flag_number",
+      "ack_flag_number",
+      "ece_flag_number",
+      "cwr_flag_number",
+      "syn_count",
+      "ack_count",
+      "fin_count",
+      "rst_count",
+      "HTTP",
+      "HTTPS",
+      "DNS",
+      "Telnet",
+      "SMTP",
+      "SSH",
+      "IRC",
+      "TCP",
+      "UDP",
+      "DHCP",
+      "ARP",
+      "ICMP",
+      "IGMP",
+      "IPv",
+      "LLC"
+    ],
+    "total_features": 38,
+    "target_categories": [
+      "Benign",
+      "Brute Force",
+      "DDoS",
+      "DoS",
+      "Mirai",
+      "Reconnaissance",
+      "Spoofing",
+      "Web-based"
+    ],
+    "random_state": 42
+  },
+  "saved_model_path": "anomaly_detection/models/extra_trees_trtr.joblib",
+  "model_file_sha256": "935813caf722b0778b2983dc776499c1779912a04748472b33212bd67dfceab6"
+}

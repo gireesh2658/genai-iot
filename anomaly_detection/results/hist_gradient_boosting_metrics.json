@@ -1,0 +1,158 @@
+{
+  "model_name": "hist_gradient_boosting",
+  "experiment_type": "TRTR",
+  "target_column": "label_category",
+  "train_records": 38466,
+  "val_records": 9616,
+  "features_count": 38,
+  "fit_duration_seconds": 2.530871100000013,
+  "inference_duration_seconds": 0.024666600000045946,
+  "overall_metrics": {
+    "accuracy": 0.7407,
+    "balanced_accuracy": 0.6287,
+    "macro_precision": 0.6086,
+    "macro_recall": 0.6287,
+    "macro_f1": 0.6034,
+    "weighted_precision": 0.8619,
+    "weighted_recall": 0.7407,
+    "weighted_f1": 0.7658,
+    "roc_auc_macro": 0.9622,
+    "roc_auc_status": "computed_ovr_macro"
+  },
+  "per_class_metrics": {
+    "Benign": {
+      "precision": 0.8368,
+      "recall": 0.8547,
+      "f1_score": 0.8457,
+      "support": 234
+    },
+    "Brute Force": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "support": 3
+    },
+    "DDoS": {
+      "precision": 0.9673,
+      "recall": 0.6734,
+      "f1_score": 0.794,
+      "support": 6850
+    },
+    "DoS": {
+      "precision": 0.4092,
+      "recall": 0.9089,
+      "f1_score": 0.5643,
+      "support": 1702
+    },
+    "Mirai": {
+      "precision": 0.9929,
+      "recall": 0.9947,
+      "f1_score": 0.9938,
+      "support": 565
+    },
+    "Reconnaissance": {
+      "precision": 0.7432,
+      "recall": 0.7143,
+      "f1_score": 0.7285,
+      "support": 154
+    },
+    "Spoofing": {
+      "precision": 0.9192,
+      "recall": 0.8835,
+      "f1_score": 0.901,
+      "support": 103
+    },
+    "Web-based": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "support": 5
+    }
+  },
+  "model_metadata": {
+    "model_name": "hist_gradient_boosting",
+    "classifier_class": "HistGradientBoostingClassifier",
+    "pipeline_steps": [
+      "classifier"
+    ],
+    "has_feature_scaling": false,
+    "scaler_class": null,
+    "hyperparameters": {
+      "categorical_features": "from_dtype",
+      "class_weight": "balanced",
+      "early_stopping": true,
+      "interaction_cst": null,
+      "l2_regularization": 0.0,
+      "learning_rate": 0.1,
+      "loss": "log_loss",
+      "max_bins": 255,
+      "max_depth": 15,
+      "max_features": 1.0,
+      "max_iter": 100,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 20,
+      "monotonic_cst": null,
+      "n_iter_no_change": 10,
+      "random_state": 42,
+      "scoring": "loss",
+      "tol": 1e-07,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "input_features": [
+      "Protocol Type",
+      "Header_Length",
+      "Time_To_Live",
+      "Rate",
+      "IAT",
+      "Number",
+      "Min",
+      "Max",
+      "AVG",
+      "Std",
+      "Variance",
+      "Tot sum",
+      "fin_flag_number",
+      "syn_flag_number",
+      "rst_flag_number",
+      "psh_flag_number",
+      "ack_flag_number",
+      "ece_flag_number",
+      "cwr_flag_number",
+      "syn_count",
+      "ack_count",
+      "fin_count",
+      "rst_count",
+      "HTTP",
+      "HTTPS",
+      "DNS",
+      "Telnet",
+      "SMTP",
+      "SSH",
+      "IRC",
+      "TCP",
+      "UDP",
+      "DHCP",
+      "ARP",
+      "ICMP",
+      "IGMP",
+      "IPv",
+      "LLC"
+    ],
+    "total_features": 38,
+    "target_categories": [
+      "Benign",
+      "Brute Force",
+      "DDoS",
+      "DoS",
+      "Mirai",
+      "Reconnaissance",
+      "Spoofing",
+      "Web-based"
+    ],
+    "random_state": 42
+  },
+  "saved_model_path": "anomaly_detection/models/hist_gradient_boosting_trtr.joblib",
+  "model_file_sha256": "b79f2b9d1925a8d05ac42558d28a24bfee43dd123945e34c115285d16eac3789"
+}

@@ -1,0 +1,58 @@
+{
+  "source_dataset": "datasets/generated/ctgan_initial_sample_v1.parquet",
+  "source_sha256": "fa2fc84a20b2ee6b45cfbb7a1139a22e9166e79322bb5ef8e0453b684150c50d",
+  "output_dataset": "datasets/generated/ctgan_initial_sample_v1_domain_corrected.parquet",
+  "output_sha256": "3ca7761b3482aa24f915afc0e45d514835e55f61da99aeb07c2946af3581b44a",
+  "output_size_bytes": 492156,
+  "total_records": 5000,
+  "total_records_modified": 4121,
+  "pct_records_modified": 82.42,
+  "remediation_policy": {
+    "label_hierarchy": {
+      "status": "APPLIED",
+      "policy": "Deterministic mapping from label_raw to label_category and is_attack using authoritative taxonomy.",
+      "records_affected_category": 1743,
+      "records_affected_is_attack": 190
+    },
+    "protocol_consistency": {
+      "status": "APPLIED",
+      "policy": "Reconciled protocol_name string to IANA standard matching canonical Protocol Type integer.",
+      "records_affected": 981
+    },
+    "dispersion_invariant": {
+      "status": "APPLIED",
+      "policy": "Enforced Std = sqrt(max(Variance, 0)) treating Variance as authoritative (higher generative fidelity KS 0.1665 vs 0.3241).",
+      "records_affected": 3515
+    },
+    "min_avg_max_ordering": {
+      "status": "UNRESOLVED_BY_DESIGN",
+      "policy": "Refused arbitrary clipping or row-wise sorting because sorting degrades Min KS statistic from 0.4973 to 0.7837 (+57% error) and distorts order-statistic distribution.",
+      "records_with_violations": 3525
+    },
+    "aggregation_ratio": {
+      "status": "UNRESOLVED_BY_DESIGN",
+      "policy": "Refused overwriting Tot sum or AVG because artificial recomputation degrades Tot sum KS from 0.5151 to 0.6107 and inflates AVG mean from 197.45 to 462.82.",
+      "records_with_violations": 2354
+    },
+    "discrete_and_binary": {
+      "status": "VERIFIED_NO_ACTION_NEEDED",
+      "policy": "Verified discrete counts are 100% integer compliant. Verified protocol indicators in CICIoT2023 represent flow-window packet proportion ratios in [0.0, 1.0], not pure {0, 1} integers; binarization rejected as destructive."
+    }
+  },
+  "before_remediation": {
+    "category_mismatches": 1743,
+    "is_attack_violations": 228,
+    "protocol_mismatches": 881,
+    "dispersion_violations": 3231,
+    "min_avg_max_violations": 3525,
+    "avg_ratio_violations": 2354
+  },
+  "after_remediation": {
+    "category_mismatches": 0,
+    "is_attack_violations": 0,
+    "protocol_mismatches": 0,
+    "dispersion_violations": 0,
+    "min_avg_max_violations": 3525,
+    "avg_ratio_violations": 2354
+  }
+}

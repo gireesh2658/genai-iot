@@ -1,0 +1,104 @@
+{
+  "Original Synthetic": {
+    "rows": 5000,
+    "columns": 42,
+    "validity": {
+      "total_nulls": 0,
+      "total_infs": 0,
+      "category_mismatches": 1743,
+      "is_attack_violations": 228,
+      "protocol_mismatches": 881,
+      "dispersion_violations": 3231,
+      "min_avg_max_violations": 3525,
+      "avg_ratio_violations": 2354
+    },
+    "statistical": {
+      "mean_ks_vs_train": 0.3595,
+      "mean_wasserstein_vs_train": 4054.9034,
+      "mean_js_vs_train": 0.2146,
+      "std_ks_vs_train": 0.3242,
+      "var_ks_vs_train": 0.1667
+    },
+    "correlation": {
+      "pearson_mace": 0.1241,
+      "spearman_mace": 0.2267,
+      "frobenius_norm": 2.1514
+    },
+    "diversity": {
+      "exact_duplicates": 0,
+      "uniqueness_ratio": 1.0,
+      "exact_training_overlap": 0,
+      "nn_min_distance": 0.0191,
+      "nn_median_distance": 0.9689,
+      "nn_mean_distance": 1.3309
+    }
+  },
+  "Label-Corrected": {
+    "rows": 5000,
+    "columns": 42,
+    "validity": {
+      "total_nulls": 0,
+      "total_infs": 0,
+      "category_mismatches": 0,
+      "is_attack_violations": 0,
+      "protocol_mismatches": 881,
+      "dispersion_violations": 3231,
+      "min_avg_max_violations": 3525,
+      "avg_ratio_violations": 2354
+    },
+    "statistical": {
+      "mean_ks_vs_train": 0.3595,
+      "mean_wasserstein_vs_train": 4054.9034,
+      "mean_js_vs_train": 0.2159,
+      "std_ks_vs_train": 0.3242,
+      "var_ks_vs_train": 0.1667
+    },
+    "correlation": {
+      "pearson_mace": 0.1241,
+      "spearman_mace": 0.2267,
+      "frobenius_norm": 2.1514
+    },
+    "diversity": {
+      "exact_duplicates": 0,
+      "uniqueness_ratio": 1.0,
+      "exact_training_overlap": 0,
+      "nn_min_distance": 0.0191,
+      "nn_median_distance": 0.9689,
+      "nn_mean_distance": 1.3309
+    }
+  },
+  "Domain-Corrected": {
+    "rows": 5000,
+    "columns": 42,
+    "validity": {
+      "total_nulls": 0,
+      "total_infs": 0,
+      "category_mismatches": 0,
+      "is_attack_violations": 0,
+      "protocol_mismatches": 0,
+      "dispersion_violations": 0,
+      "min_avg_max_violations": 3525,
+      "avg_ratio_violations": 2354
+    },
+    "statistical": {
+      "mean_ks_vs_train": 0.3503,
+      "mean_wasserstein_vs_train": 4051.8172,
+      "mean_js_vs_train": 0.2328,
+      "std_ks_vs_train": 0.1667,
+      "var_ks_vs_train": 0.1667
+    },
+    "correlation": {
+      "pearson_mace": 0.1217,
+      "spearman_mace": 0.2281,
+      "frobenius_norm": 2.1037
+    },
+    "diversity": {
+      "exact_duplicates": 0,
+      "uniqueness_ratio": 1.0,
+      "exact_training_overlap": 0,
+      "nn_min_distance": 0.0147,
+      "nn_median_distance": 0.9557,
+      "nn_mean_distance": 1.2737
+    }
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "Model":"random_forest",
+    "Macro F1":0.6691,
+    "Balanced Accuracy":0.6753,
+    "Accuracy":0.7432,
+    "Macro Precision":0.7342,
+    "Macro Recall":0.6753,
+    "Weighted F1":0.7676,
+    "Training Time (s)":0.471,
+    "Inference Time (s)":0.04
+  },
+  {
+    "Model":"hist_gradient_boosting",
+    "Macro F1":0.6472,
+    "Balanced Accuracy":0.668,
+    "Accuracy":0.7329,
+    "Macro Precision":0.6635,
+    "Macro Recall":0.668,
+    "Weighted F1":0.7587,
+    "Training Time (s)":2.412,
+    "Inference Time (s)":0.018
+  },
+  {
+    "Model":"extra_trees",
+    "Macro F1":0.6283,
+    "Balanced Accuracy":0.6447,
+    "Accuracy":0.7199,
+    "Macro Precision":0.6452,
+    "Macro Recall":0.6447,
+    "Weighted F1":0.7466,
+    "Training Time (s)":0.393,
+    "Inference Time (s)":0.042
+  },
+  {
+    "Model":"logistic_regression",
+    "Macro F1":0.5113,
+    "Balanced Accuracy":0.6178,
+    "Accuracy":0.6688,
+    "Macro Precision":0.5264,
+    "Macro Recall":0.6178,
+    "Weighted F1":0.7011,
+    "Training Time (s)":7.913,
+    "Inference Time (s)":0.006
+  }
+]

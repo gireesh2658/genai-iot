@@ -1,0 +1,54 @@
+[
+  {
+    "Model":"random_forest",
+    "TRTR Macro F1":0.647,
+    "TSTR Macro F1":0.4457,
+    "Abs Macro F1 Diff":-0.2013,
+    "Rel Macro F1 Diff (%)":-31.11,
+    "TRTR Bal Acc":0.6719,
+    "TSTR Bal Acc":0.4668,
+    "TRTR Weighted F1":0.7699,
+    "TSTR Weighted F1":0.7533,
+    "Abs Weighted F1 Diff":-0.0166,
+    "Rel Weighted F1 Diff (%)":-2.16
+  },
+  {
+    "Model":"extra_trees",
+    "TRTR Macro F1":0.634,
+    "TSTR Macro F1":0.4296,
+    "Abs Macro F1 Diff":-0.2044,
+    "Rel Macro F1 Diff (%)":-32.24,
+    "TRTR Bal Acc":0.6463,
+    "TSTR Bal Acc":0.4367,
+    "TRTR Weighted F1":0.7539,
+    "TSTR Weighted F1":0.7239,
+    "Abs Weighted F1 Diff":-0.03,
+    "Rel Weighted F1 Diff (%)":-3.98
+  },
+  {
+    "Model":"hist_gradient_boosting",
+    "TRTR Macro F1":0.6034,
+    "TSTR Macro F1":0.4175,
+    "Abs Macro F1 Diff":-0.1859,
+    "Rel Macro F1 Diff (%)":-30.81,
+    "TRTR Bal Acc":0.6287,
+    "TSTR Bal Acc":0.4418,
+    "TRTR Weighted F1":0.7658,
+    "TSTR Weighted F1":0.67,
+    "Abs Weighted F1 Diff":-0.0958,
+    "Rel Weighted F1 Diff (%)":-12.51
+  },
+  {
+    "Model":"logistic_regression",
+    "TRTR Macro F1":0.5214,
+    "TSTR Macro F1":0.3942,
+    "Abs Macro F1 Diff":-0.1272,
+    "Rel Macro F1 Diff (%)":-24.4,
+    "TRTR Bal Acc":0.6133,
+    "TSTR Bal Acc":0.4102,
+    "TRTR Weighted F1":0.7177,
+    "TSTR Weighted F1":0.6075,
+    "Abs Weighted F1 Diff":-0.1102,
+    "Rel Weighted F1 Diff (%)":-15.35
+  }
+]

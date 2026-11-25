@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: iotsynth-ai-backend
+    runtime: python
+    rootDir: .
+    buildCommand: pip install --upgrade pip && pip install -r requirements-render.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.10"
+      - key: PYTHONDONTWRITEBYTECODE
+        value: "1"
+      - key: IOTSYNTH_DEFAULT_CTGAN_MODEL
+        value: ctgan_device_aware_v2
+      - key: IOTSYNTH_GENERATED_DIR
+        value: /tmp/iotsynth_generated
+      - key: IOTSYNTH_DEBUG
+        value: "false"
+      # Set in Render Dashboard to your deployed frontend public HTTPS URL (comma-separated if multiple),
+      # e.g. https://iotsynth-ai-frontend.onrender.com
+      - key: CORS_ORIGINS
+        sync: false
+
+  - type: web
+    name: iotsynth-ai-frontend
+    runtime: node
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start -- --hostname 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      # Set in Render Dashboard to your deployed backend public HTTPS URL before building/rebuilding frontend,
+      # e.g. https://iotsynth-ai-backend.onrender.com
+      - key: NEXT_PUBLIC_BACKEND_URL
+        sync: false
