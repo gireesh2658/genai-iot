@@ -556,6 +556,21 @@ class CTGANService:
             stats["protocol_mismatches_fixed"] = int(diff_proto.sum())
             corrected.loc[valid_proto_mask, "protocol_name"] = mapped_proto.loc[valid_proto_mask]
 
+        if "TCP" in corrected.columns and "UDP" in corrected.columns:
+            tcp_vals = pd.to_numeric(corrected["TCP"], errors="coerce").fillna(0.0)
+            udp_vals = pd.to_numeric(corrected["UDP"], errors="coerce").fillna(0.0)
+            both_mask = (tcp_vals > 0.5) & (udp_vals > 0.5)
+            if both_mask.any():
+                proto_str = (
+                    corrected["protocol_name"].astype(str).str.upper()
+                    if "protocol_name" in corrected.columns
+                    else pd.Series("", index=corrected.index)
+                )
+                is_udp_proto = both_mask & proto_str.str.contains("UDP", na=False)
+                is_tcp_other = both_mask & ~is_udp_proto
+                corrected.loc[is_udp_proto, "TCP"] = 0.0
+                corrected.loc[is_tcp_other, "UDP"] = 0.0
+
         if "Variance" in corrected.columns and "Std" in corrected.columns:
             expected_std = np.sqrt(np.maximum(pd.to_numeric(corrected["Variance"], errors="coerce").fillna(0.0), 0.0))
             orig_std = pd.to_numeric(corrected["Std"], errors="coerce").fillna(0.0)
@@ -825,6 +840,31 @@ class CTGANService:
             and "device_id" in df.columns
             and "device_category" in df.columns
         )
+        if (
+            has_native_device_conditioning
+            and effective_conditions
+            and "device_category" in effective_conditions
+            and "device_id" not in effective_conditions
+        ):
+            target_dcat = str(effective_conditions["device_category"]).strip()
+            v2_reg = self._get_v2_registry_data()
+            cat_devs = [
+                (dev_id, max(1, int(info.get("train_row_count", 1))))
+                for dev_id, info in v2_reg["devices_by_id"].items()
+                if info.get("device_category") == target_dcat
+            ]
+            if cat_devs:
+                valid_ids = {d for d, _ in cat_devs}
+                bad_dev_mask = ~df["device_id"].astype(str).isin(valid_ids)
+                if bad_dev_mask.any():
+                    dev_choices = np.array([d for d, _ in cat_devs])
+                    weights = np.array([w for _, w in cat_devs], dtype=np.float64)
+                    weights /= weights.sum()
+                    rng = np.random.default_rng(42)
+                    n_fix = int(bad_dev_mask.sum())
+                    df.loc[bad_dev_mask, "device_id"] = rng.choice(dev_choices, size=n_fix, replace=True, p=weights)
+                    df["device_category"] = target_dcat
+
         device_calibrated = False
         if (
             not has_native_device_conditioning

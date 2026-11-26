@@ -65,8 +65,11 @@ def verify_no_mac_ip(df: pd.DataFrame, tag: str) -> bool:
 
 
 def _sample_df(synth, num_rows: int) -> pd.DataFrame:
-    out = synth.sample(num_rows=num_rows)
-    df = out["ciciot_device_v2"] if isinstance(out, dict) else out
+    if isinstance(synth, CTGANModel):
+        df = synth.sample(num_rows=num_rows)
+    else:
+        out = synth.sample(num_rows=num_rows)
+        df = out["ciciot_device_v2"] if isinstance(out, dict) else out
     return df[CTGAN_V2_ALL_COLUMNS].copy()
 
 
@@ -368,7 +371,7 @@ def main() -> None:
 
     # Load model cleanly through canonical CTGANModel.load (CPU-portable path)
     wrapper = CTGANModel.load(directory=MODELS_DIR, model_name="ctgan_device_aware_v2")
-    synth = wrapper.synthesizer
+    synth = wrapper
 
     # 1. Generate unconditional pool matching validation/test-scale evaluation (6,000 rows)
     t0 = time.perf_counter()

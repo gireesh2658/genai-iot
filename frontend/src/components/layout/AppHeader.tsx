@@ -2,59 +2,52 @@
 
 import React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
-import { BrandMark, NAV_ROUTES } from "./AppSidebar";
-import { IconButton } from "@/components/ui/Button";
-import { StatusIndicator } from "@/components/ui/StatusIndicator";
 
-export function AppHeader({
-  online,
-  onOpenMobileMenu,
-}: {
-  online: boolean | null;
-  onOpenMobileMenu: () => void;
-}) {
-  const pathname = usePathname();
-  const activeRoute =
-    NAV_ROUTES.find((r) => (r.href === "/" ? pathname === "/" : pathname.startsWith(r.href))) ||
-    NAV_ROUTES[0];
+function BrandMark() {
+  return (
+    <svg
+      viewBox="0 0 36 36"
+      className="h-8 w-8 shrink-0"
+      aria-hidden="true"
+      fill="none"
+    >
+      <rect
+        x="1"
+        y="1"
+        width="34"
+        height="34"
+        rx="9"
+        fill="#EAF2FD"
+        stroke="#C4DBFA"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M6 19.5H10.5L13.5 11.5L17.5 24.5L21.5 14L24.5 19.5H30"
+        stroke="#2A67B1"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="21.5" cy="14" r="2.2" fill="#17857B" />
+    </svg>
+  );
+}
 
+export function AppHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-hairline bg-surface/95 backdrop-blur">
-      <div className="mx-auto flex h-14 max-w-[1520px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <div className="flex min-w-0 items-center gap-3">
-          <IconButton
-            label="Open navigation menu"
-            onClick={onOpenMobileMenu}
-            className="min-h-[44px] min-w-[44px] border-hairline lg:hidden"
-          >
-            <Menu className="h-5 w-5" />
-          </IconButton>
-
-          <Link href="/" className="flex items-center gap-2 lg:hidden">
-            <BrandMark />
-            <span className="text-sm font-bold text-ink">IoTSynth AI</span>
-          </Link>
-
-          <nav aria-label="Breadcrumb" className="hidden min-w-0 items-center gap-2 text-xs lg:flex">
-            <span className="rounded-md border border-hairline bg-well px-2 py-0.5 font-semibold text-ink-secondary">
-              Cybersecurity (IoT)
+      <div className="mx-auto flex h-14 max-w-[1360px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+        <Link href="/studio" className="flex items-center gap-2.5">
+          <BrandMark />
+          <div className="leading-tight">
+            <span className="block text-sm font-bold tracking-tight text-ink">
+              IoTSynth <span className="text-brand">AI</span>
             </span>
-            <span className="text-ink-muted" aria-hidden="true">
-              /
+            <span className="block text-[11px] font-medium text-ink-secondary">
+              Synthetic IoT Traffic Generator
             </span>
-            <span className="font-bold text-ink">{activeRoute.label}</span>
-            <span className="hidden text-ink-secondary xl:inline">· {activeRoute.caption}</span>
-          </nav>
-        </div>
-
-        <div className="flex items-center gap-2.5">
-          <span className="hidden rounded-full border border-hairline bg-well px-3 py-1 font-mono text-[11px] font-medium text-ink-secondary sm:inline-flex">
-            CICIoT2023 · 44-Col Telemetry · CPU PyTorch
-          </span>
-          {online === false && <StatusIndicator tone="danger" label="API Unreachable" />}
-        </div>
+          </div>
+        </Link>
       </div>
     </header>
   );

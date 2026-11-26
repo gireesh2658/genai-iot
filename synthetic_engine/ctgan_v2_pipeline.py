@@ -72,6 +72,64 @@ CTGAN_V2_ALL_COLUMNS: List[str] = list(MODEL_INPUT_FEATURES) + [
     "device_category",
 ]
 
+LOG1P_SKEWED_COLUMNS: List[str] = [
+    "Header_Length",
+    "Duration",
+    "Rate",
+    "Srate",
+    "Drate",
+    "Tot sum",
+    "Min",
+    "Max",
+    "AVG",
+    "Std",
+    "Tot size",
+    "IAT",
+    "Number",
+    "Magnitude",
+    "Radius",
+    "Covariance",
+    "Variance",
+    "Weight",
+    "syn_count",
+    "ack_count",
+    "fin_count",
+    "rst_count",
+    "flow_duration",
+]
+
+
+def apply_log1p_transform(
+    df: pd.DataFrame,
+    cols: Sequence[str] = LOG1P_SKEWED_COLUMNS,
+) -> Tuple[pd.DataFrame, Dict[str, float]]:
+    """Apply log1p compression to heavy-tailed non-negative columns and record upper bounds."""
+    out = df.copy()
+    bounds: Dict[str, float] = {}
+    for col in cols:
+        if col in out.columns:
+            vals = np.maximum(pd.to_numeric(out[col], errors="coerce").fillna(0.0).to_numpy(dtype=np.float64), 0.0)
+            logged = np.log1p(vals)
+            bounds[col] = float(np.max(logged))
+            out[col] = logged
+    return out, bounds
+
+
+def invert_log1p_transform(
+    df: pd.DataFrame,
+    log1p_bounds: Dict[str, float],
+) -> pd.DataFrame:
+    """Invert log1p compression safely with stored training upper bounds to prevent expm1 outliers."""
+    if not log1p_bounds:
+        return df
+    out = df.copy()
+    for col, max_log in log1p_bounds.items():
+        if col in out.columns:
+            vals = pd.to_numeric(out[col], errors="coerce").fillna(0.0).to_numpy(dtype=np.float64)
+            clipped = np.clip(vals, 0.0, float(max_log))
+            out[col] = np.expm1(clipped)
+    return out
+
 
 @dataclass
 class CTGANv2Config:
@@ -336,9 +394,12 @@ def conditional_sample_with_support_check(
         }
 
     tier = "under_supported" if support < min_support_threshold else "well_supported"
-    cond = Condition(column_values=conditions_spec, num_rows=num_rows, table_name=table_name)
-    out = synthesizer.sample_from_conditions(conditions=[cond], max_tries_per_batch=max_tries_per_batch)
-    df = out[table_name] if isinstance(out, dict) else out
+    if hasattr(synthesizer, "sample") and not hasattr(synthesizer, "sample_from_conditions"):
+        df = synthesizer.sample(num_rows=num_rows, conditions=conditions_spec)
+    else:
+        cond = Condition(column_values=conditions_spec, num_rows=num_rows, table_name=table_name)
+        out = synthesizer.sample_from_conditions(conditions=[cond], max_tries_per_batch=max_tries_per_batch)
+        df = out[table_name] if isinstance(out, dict) else out
 
     exact_matches = pd.Series(True, index=df.index)
     for k, v in conditions_spec.items():

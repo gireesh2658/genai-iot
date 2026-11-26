@@ -74,7 +74,7 @@
     "v1_generator_param_count": 1817195
   },
   "v2_actual_dim_cond_vec": 130,
-  "v2_actual_transformed_data_dim": 406,
-  "v2_generator_param_count": 512194,
+  "v2_actual_transformed_data_dim": 436,
+  "v2_generator_param_count": 535324,
   "actual_cond_vec_reduction_pct": 86.9
 }

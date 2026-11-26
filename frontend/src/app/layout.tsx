@@ -3,9 +3,9 @@ import "./globals.css";
 import AppShell from "@/components/AppShell";
 
 export const metadata: Metadata = {
-  title: "IoTSynth AI — Signal Intelligence Studio",
+  title: "IoTSynth AI — Synthetic IoT Traffic Generator",
   description:
-    "Generative AI and cybersecurity workbench for CTGAN synthetic IoT network telemetry generation, statistical quality auditing, and anomaly-detection training.",
+    "Generate device-aware synthetic normal and attack IoT network traffic using CTGAN V2 for anomaly detection evaluation.",
 };
 
 export default function RootLayout({

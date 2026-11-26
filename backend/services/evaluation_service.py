@@ -29,6 +29,11 @@ class EvaluationService:
     def __init__(self, settings: Optional[Settings] = None) -> None:
         self.settings = settings or get_settings()
         self.APPROVED_REFERENCE_DATASETS: Dict[str, Path] = {
+            "ciciot2023_device_v2_train": self.settings.DATASETS_DIR
+            / "external"
+            / "device_labelled_iot_data"
+            / "splits"
+            / "train.parquet",
             "ciciot2023_preprocessed_sample": self.settings.DATASETS_PROCESSED_DIR
             / "ciciot2023_preprocessed_sample.parquet",
         }
@@ -72,7 +77,17 @@ class EvaluationService:
                 f"Dataset '{request.synthetic_dataset_id}' not found in datasets/generated/."
             )
 
-        ref_file = self.APPROVED_REFERENCE_DATASETS[request.reference_dataset_id]
+        effective_ref_id = request.reference_dataset_id
+        ref_file = self.APPROVED_REFERENCE_DATASETS[effective_ref_id]
+        if (
+            effective_ref_id == "ciciot2023_device_v2_train"
+            and not ref_file.exists()
+            and self.APPROVED_REFERENCE_DATASETS["ciciot2023_preprocessed_sample"].exists()
+        ):
+            # Fallback on cloud deployments (e.g. Render) where datasets/external/ is excluded
+            effective_ref_id = "ciciot2023_preprocessed_sample"
+            ref_file = self.APPROVED_REFERENCE_DATASETS[effective_ref_id]
+
         synth_file = synth_map[request.synthetic_dataset_id]
         if not ref_file.exists():
             raise ResourceNotFoundError("Reference Dataset File", str(ref_file.name))
@@ -109,6 +124,9 @@ class EvaluationService:
         summary_metrics = {
             "average_ks_statistic_vs_train": stat_summary.get("average_ks_statistic_vs_train"),
             "average_wasserstein_distance_vs_train": stat_summary.get("average_wasserstein_distance_vs_train"),
+            "average_normalized_wasserstein_distance_vs_train": stat_summary.get(
+                "average_normalized_wasserstein_distance_vs_train"
+            ),
             "average_jensen_shannon_distance_vs_train": stat_summary.get("average_jensen_shannon_distance_vs_train"),
             "pearson_mace": corr_summary.get("pearson_mace"),
             "spearman_mace": corr_summary.get("spearman_mace"),
@@ -121,7 +139,7 @@ class EvaluationService:
             evaluation_id=evaluation_id,
             status="completed",
             timestamp=datetime.now(timezone.utc).isoformat(),
-            reference_dataset_id=request.reference_dataset_id,
+            reference_dataset_id=effective_ref_id,
             synthetic_dataset_id=request.synthetic_dataset_id,
             summary_metrics=summary_metrics,
             reports={

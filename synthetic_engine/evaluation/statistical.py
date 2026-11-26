@@ -60,8 +60,14 @@ class StatisticalDistributionEvaluator:
         ks_stat = float(ks_res.statistic)
         ks_pvalue = float(ks_res.pvalue)
 
-        # Wasserstein distance (Earth Mover's Distance)
+        # Wasserstein distance (raw & real-std standardized Earth Mover's Distance)
         w_dist = float(stats.wasserstein_distance(r_vals, s_vals))
+        r_std = float(r_stats["std"])
+        norm_w_dist = (
+            float(stats.wasserstein_distance(r_vals / r_std, s_vals / r_std))
+            if r_std > 1e-12
+            else 0.0
+        )
 
         # Relative mean and std differences
         mean_abs_err = abs(r_stats["mean"] - s_stats["mean"])
@@ -73,6 +79,7 @@ class StatisticalDistributionEvaluator:
             "ks_statistic": round(ks_stat, 4),
             "ks_pvalue": ks_pvalue,
             "wasserstein_distance": round(w_dist, 4),
+            "normalized_wasserstein_distance": round(norm_w_dist, 4),
             "mean_absolute_difference": round(mean_abs_err, 4),
             "std_absolute_difference": round(std_abs_err, 4),
         }
@@ -140,6 +147,11 @@ class StatisticalDistributionEvaluator:
         # Summary aggregates
         avg_ks_train = float(np.mean([m["ks_statistic"] for m in train_continuous.values()])) if train_continuous else 0.0
         avg_w_dist_train = float(np.mean([m["wasserstein_distance"] for m in train_continuous.values()])) if train_continuous else 0.0
+        avg_norm_w_dist_train = (
+            float(np.mean([m["normalized_wasserstein_distance"] for m in train_continuous.values()]))
+            if train_continuous
+            else 0.0
+        )
         avg_js_dist_train = float(np.mean([m["jensen_shannon_distance"] for m in train_categorical.values()])) if train_categorical else 0.0
 
         return {
@@ -150,6 +162,7 @@ class StatisticalDistributionEvaluator:
             "summary_metrics": {
                 "average_ks_statistic_vs_train": round(avg_ks_train, 4),
                 "average_wasserstein_distance_vs_train": round(avg_w_dist_train, 4),
+                "average_normalized_wasserstein_distance_vs_train": round(avg_norm_w_dist_train, 4),
                 "average_jensen_shannon_distance_vs_train": round(avg_js_dist_train, 4),
             },
         }

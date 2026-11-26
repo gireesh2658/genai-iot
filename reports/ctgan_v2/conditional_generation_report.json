@@ -98,7 +98,7 @@
       "exact_condition_matches": 100,
       "compliance_rate": 1.0,
       "expected_device_category": "Audio",
-      "device_category_consistency_rate": 0.87
+      "device_category_consistency_rate": 0.76
     },
     {
       "condition": {
@@ -112,7 +112,7 @@
       "exact_condition_matches": 100,
       "compliance_rate": 1.0,
       "expected_device_category": "Camera",
-      "device_category_consistency_rate": 0.82
+      "device_category_consistency_rate": 0.77
     },
     {
       "condition": {
@@ -126,7 +126,7 @@
       "exact_condition_matches": 100,
       "compliance_rate": 1.0,
       "expected_device_category": "Home Automation",
-      "device_category_consistency_rate": 0.79
+      "device_category_consistency_rate": 0.71
     },
     {
       "condition": {
@@ -140,7 +140,7 @@
       "exact_condition_matches": 100,
       "compliance_rate": 1.0,
       "expected_device_category": "Hub",
-      "device_category_consistency_rate": 0.7
+      "device_category_consistency_rate": 0.56
     },
     {
       "condition": {
@@ -154,7 +154,7 @@
       "exact_condition_matches": 100,
       "compliance_rate": 1.0,
       "expected_device_category": "Lighting",
-      "device_category_consistency_rate": 0.59
+      "device_category_consistency_rate": 0.55
     },
     {
       "condition": {
@@ -168,7 +168,7 @@
       "exact_condition_matches": 100,
       "compliance_rate": 1.0,
       "expected_device_category": "NextGen",
-      "device_category_consistency_rate": 0.86
+      "device_category_consistency_rate": 0.93
     },
     {
       "condition": {
@@ -182,7 +182,7 @@
       "exact_condition_matches": 100,
       "compliance_rate": 1.0,
       "expected_device_category": "Power Outlet",
-      "device_category_consistency_rate": 0.71
+      "device_category_consistency_rate": 0.27
     }
   ],
   "attack_category_tests": [
@@ -397,8 +397,8 @@
       "support_tier": "under_supported",
       "empirical_support": 10,
       "requested_rows": 50,
-      "generated_rows": 20,
-      "exact_condition_matches": 20,
+      "generated_rows": 50,
+      "exact_condition_matches": 50,
       "compliance_rate": 1.0
     },
     {
@@ -410,8 +410,8 @@
       "support_tier": "under_supported",
       "empirical_support": 15,
       "requested_rows": 50,
-      "generated_rows": 9,
-      "exact_condition_matches": 9,
+      "generated_rows": 23,
+      "exact_condition_matches": 23,
       "compliance_rate": 1.0
     },
     {
@@ -423,8 +423,8 @@
       "support_tier": "under_supported",
       "empirical_support": 14,
       "requested_rows": 50,
-      "generated_rows": 46,
-      "exact_condition_matches": 46,
+      "generated_rows": 50,
+      "exact_condition_matches": 50,
       "compliance_rate": 1.0
     }
   ],
@@ -453,7 +453,7 @@
   "summary": {
     "device_category_mean_compliance": 1.0,
     "device_id_mean_compliance": 1.0,
-    "device_id_category_consistency_mean": 0.7629,
+    "device_id_category_consistency_mean": 0.65,
     "attack_category_mean_compliance": 1.0,
     "combined_supported_mean_compliance": 1.0,
     "unsupported_combinations_properly_rejected": 2,

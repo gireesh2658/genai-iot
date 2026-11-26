@@ -2,19 +2,52 @@
   "model_name": "ctgan_device_aware_v2",
   "model_version": "ctgan_device_aware_v2",
   "is_fitted": true,
-  "saved_at": "2026-11-25T14:40:00.975390+00:00",
+  "saved_at": "2026-11-26T02:46:51.988345+00:00",
   "training_metadata": {
     "dataset_source": "ciciot2023_pcap_device_labelled_v2",
     "trained_device": "cuda:0 (NVIDIA GeForce RTX 3050 6GB Laptop GPU)",
     "cpu_portable_checkpoint": true,
+    "log1p_columns": [
+      "Header_Length",
+      "Rate",
+      "Tot sum",
+      "Min",
+      "Max",
+      "AVG",
+      "Std",
+      "IAT",
+      "Number",
+      "Variance",
+      "syn_count",
+      "ack_count",
+      "fin_count",
+      "rst_count"
+    ],
+    "log1p_bounds": {
+      "Header_Length": 4.110873864173311,
+      "Rate": 14.293727147179569,
+      "Tot sum": 12.442894224659351,
+      "Min": 7.993957547573565,
+      "Max": 10.053415041519079,
+      "AVG": 8.543835122362658,
+      "Std": 8.918547869938209,
+      "IAT": 10.231613310834462,
+      "Number": 4.61512051684126,
+      "Variance": 17.83682797480583,
+      "syn_count": 4.61512051684126,
+      "ack_count": 4.61512051684126,
+      "fin_count": 4.61512051684126,
+      "rst_count": 4.61512051684126
+    },
+    "num_rows": 88146,
     "train_rows": 88146,
     "val_rows": 18889,
     "test_rows": 18889,
-    "elapsed_seconds": 1586.9,
-    "peak_memory_mb": 79.65,
+    "elapsed_seconds": 875.53,
+    "peak_memory_mb": 100.44,
     "actual_dim_cond_vec": 130,
-    "actual_transformed_data_dim": 406,
-    "generator_param_count": 512194,
+    "actual_transformed_data_dim": 436,
+    "generator_param_count": 535324,
     "train_raw_label_counts": {
       "BENIGN": 18376,
       "VULNERABILITYSCAN": 5101,
@@ -209,11 +242,10 @@
         "v1_generator_param_count": 1817195
       },
       "v2_actual_dim_cond_vec": 130,
-      "v2_actual_transformed_data_dim": 406,
-      "v2_generator_param_count": 512194,
+      "v2_actual_transformed_data_dim": 436,
+      "v2_generator_param_count": 535324,
       "actual_cond_vec_reduction_pct": 86.9
-    },
-    "num_rows": 88146
+    }
   },
   "feature_columns": [
     "Protocol Type",
@@ -272,7 +304,7 @@
   ],
   "config": {
     "epochs": 150,
-    "batch_size": 500,
+    "batch_size": 1000,
     "pac": 10,
     "generator_dim": [
       256,

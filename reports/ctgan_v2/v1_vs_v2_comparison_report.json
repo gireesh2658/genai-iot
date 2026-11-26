@@ -22,47 +22,47 @@
   "v2": {
     "epochs": 150,
     "enable_gpu": true,
-    "training_seconds": 1586.9,
+    "training_seconds": 875.53,
     "discrete_columns": 7,
     "dim_cond_vec": 130,
     "device_aware_conditioning": true,
     "statistical_summary_repaired": {
-      "average_ks_statistic_vs_train": 0.307,
-      "average_wasserstein_distance_vs_train": 2207.5313,
-      "average_jensen_shannon_distance_vs_train": 0.3621
+      "average_ks_statistic_vs_train": 0.2842,
+      "average_wasserstein_distance_vs_train": 2849.6116,
+      "average_jensen_shannon_distance_vs_train": 0.3443
     },
     "statistical_summary_raw": {
-      "average_ks_statistic_vs_train": 0.3004,
-      "average_wasserstein_distance_vs_train": 2206.932,
-      "average_jensen_shannon_distance_vs_train": 0.3619
+      "average_ks_statistic_vs_train": 0.282,
+      "average_wasserstein_distance_vs_train": 2850.9247,
+      "average_jensen_shannon_distance_vs_train": 0.3467
     },
     "diversity_repaired": {
       "uniqueness_ratio": 1.0,
       "exact_training_overlaps": 0,
-      "median_nn_distance": 0.3505,
+      "median_nn_distance": 0.4187,
       "memorization_risk": "Low"
     },
     "domain_validity_raw_summary": {
       "all_passed": false,
       "schema_valid": true,
       "negative_violations": 0,
-      "min_le_avg_le_max_violations": 1869,
-      "std_sqrt_variance_violations": 4549,
-      "avg_tot_sum_violations": 4098,
-      "protocol_mismatch_count": 251,
-      "simultaneous_tcp_udp_count": 30,
-      "label_category_mismatch_count": 1119,
-      "is_attack_violation_count": 127
+      "min_le_avg_le_max_violations": 2564,
+      "std_sqrt_variance_violations": 2495,
+      "avg_tot_sum_violations": 2775,
+      "protocol_mismatch_count": 374,
+      "simultaneous_tcp_udp_count": 41,
+      "label_category_mismatch_count": 1614,
+      "is_attack_violation_count": 282
     },
     "domain_validity_repaired_summary": {
       "all_passed": false,
       "schema_valid": true,
       "negative_violations": 0,
-      "min_le_avg_le_max_violations": 1869,
+      "min_le_avg_le_max_violations": 2564,
       "std_sqrt_variance_violations": 0,
-      "avg_tot_sum_violations": 4098,
+      "avg_tot_sum_violations": 2775,
       "protocol_mismatch_count": 0,
-      "simultaneous_tcp_udp_count": 30,
+      "simultaneous_tcp_udp_count": 0,
       "label_category_mismatch_count": 0,
       "is_attack_violation_count": 0
     }

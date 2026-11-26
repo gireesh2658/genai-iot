@@ -319,6 +319,11 @@ class CTGANModel:
         else:
             synthetic_df = synthetic
 
+        log1p_bounds = self.training_metadata.get("log1p_bounds")
+        if isinstance(log1p_bounds, dict) and log1p_bounds:
+            from synthetic_engine.ctgan_v2_pipeline import invert_log1p_transform
+            synthetic_df = invert_log1p_transform(synthetic_df, log1p_bounds)
+
         return synthetic_df
 
     # ------------------------------------------------------------------

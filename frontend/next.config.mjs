@@ -10,6 +10,9 @@ const backendUrl = configuredBackend || (process.env.RENDER ? "" : "http://127.0
 
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    proxyTimeout: 300000,
+  },
   async rewrites() {
     if (!backendUrl) {
       return [];

@@ -34,6 +34,7 @@ from synthetic_engine.ctgan_v2_pipeline import (
     CTGAN_V2_ALL_COLUMNS,
     CTGAN_V2_DISCRETE_COLUMNS,
     CTGANv2Config,
+    apply_log1p_transform,
     compute_encoding_comparison,
     create_v2_synthesizer,
     ensure_cpu_portable_and_save,
@@ -177,6 +178,10 @@ def main() -> None:
     (SPLITS_DIR / "split_summary.json").write_text(json.dumps(split_summary, indent=2), encoding="utf-8")
     print(f"Leakage-free splits saved: train={len(train_df)}, val={len(val_df)}, test={len(test_df)}")
 
+    # Compress heavy-tailed non-negative features cleanly in log1p space before CTGAN fitting
+    train_fit_df, log1p_bounds = apply_log1p_transform(train_df)
+    print(f"Applied log1p compression across {len(log1p_bounds)} skewed continuous columns.")
+
     # Ensure batch_size divides cleanly and <= len(train_df)
     batch_size = min(args.batch_size, (len(train_df) // args.pac) * args.pac)
     batch_size = max(args.pac * 10, (batch_size // args.pac) * args.pac)
@@ -192,8 +197,8 @@ def main() -> None:
     )
     encoding_cmp["v1_measured_checkpoint"] = v1_actual
 
-    # 2. GPU Smoke Fit (3 epochs on 2,000-row stratified subset of train_df)
-    smoke_df = train_df.sample(n=min(2000, len(train_df)), random_state=args.seed).reset_index(drop=True)
+    # 2. GPU Smoke Fit (3 epochs on 2,000-row stratified subset of log1p train_fit_df)
+    smoke_df = train_fit_df.sample(n=min(2000, len(train_fit_df)), random_state=args.seed).reset_index(drop=True)
     smoke_cfg = CTGANv2Config(
         model_version="ctgan_device_aware_v2_smoke",
         epochs=3,
@@ -221,7 +226,7 @@ def main() -> None:
         f"cond_dim={smoke_cond_dim}, data_dim={smoke_data_dim}, peak_vram={smoke_peak_mb} MB"
     )
 
-    # 3. Full GPU Training on train_df ONLY (zero val/test leakage)
+    # 3. Full GPU Training on log1p-compressed train_fit_df ONLY (zero val/test leakage)
     cfg = CTGANv2Config(
         model_version="ctgan_device_aware_v2",
         epochs=args.epochs,
@@ -234,12 +239,12 @@ def main() -> None:
         random_seed=args.seed,
         verbose=True,
     )
-    synth, sdv_meta = create_v2_synthesizer(train_df, cfg)
+    synth, sdv_meta = create_v2_synthesizer(train_fit_df, cfg)
     smi = NvidiaSmiSampler(interval_s=1.5)
     torch.cuda.reset_peak_memory_stats()
     smi.start()
     t0 = time.perf_counter()
-    synth.fit({"ciciot_device_v2": train_df})
+    synth.fit({"ciciot_device_v2": train_fit_df})
     torch.cuda.synchronize()
     train_elapsed = time.perf_counter() - t0
     gpu_telemetry = smi.stop()
@@ -318,6 +323,8 @@ def main() -> None:
         "dataset_source": "ciciot2023_pcap_device_labelled_v2",
         "trained_device": f"cuda:0 ({gpu_name})",
         "cpu_portable_checkpoint": True,
+        "log1p_columns": list(log1p_bounds.keys()),
+        "log1p_bounds": log1p_bounds,
         "num_rows": len(train_df),
         "train_rows": len(train_df),
         "val_rows": len(val_df),
